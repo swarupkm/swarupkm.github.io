@@ -1,0 +1,62 @@
+.flex-container {
+  display: flex;
+}
+@font-face {
+  font-family: RobotoFont;
+  src: url(roboto/Roboto-Regular.ttf);
+}
+
+
+body {
+  width: 21cm;
+  height: 57cm;
+  font-family: 'RobotoFont';
+}
+
+.heading-color {
+  color: #a71b24;
+}
+
+.name {
+  font-size: 36px;
+}
+
+.profession {
+  font-size: 16px;
+  padding-top: 6px;
+  line-height: 20px;
+  margin-bottom: 10px;
+}
+
+.experience {
+  margin-left: 2%;
+  margin-right: 2%;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+.experience .title {
+  margin: 0%;
+}
+
+.left {
+  width: 30%;
+  background-color: #f5f1ee;
+  padding: 2%;
+}
+.right {
+  width: 70%;
+  padding: 2%;
+}
+
+li {
+  margin: 1%;
+}
+
+.skills ul{
+  padding-left: 10%;
+}
+
+.summary {
+  margin-top: 12%;
+  margin-bottom: 12%;
+}
