@@ -5,14 +5,13 @@ const experiences = [
     location: 'Bengaluru, India',
     duration: 'June 2022 - Present',
     summary: [
-      'Swarup is working for Australian based clients as a Lead Software Engineer.',
-      'He maintained and upgraded the public facing APIs by introducing RESTful patterns and practices.',
-      'He introduced Clean Architecture in some of the legacy projects.',
-      'He improved the existing CI and deployment process of the client, thereby reducing the deploymenttime from many hours to few minutes.',
+      'Swarup is working for Australian based clients as a Lead Software Engineer. Domains ranging from Eductech to Fintech',
+      'He helped startup clients launch their products and go from 0 to 1 using serverless architectures',
+      'He improved the existing CI and deployment process of the clients, thereby reducing the deployment time from many hours to few minutes.',
       'He introduced Trunk Based Development as part of this improvement.',
-      'He was managing a team of 5 engineers and helped upskill the team by introducing to Domain DrivenDesign and other architectural principles.'
+      'He was managing a team of 5 engineers and helped upskill the team by introducing to Domain Driven Design, Clean Architecture and other architectural principles.'
     ],
-    techStack: ['Typescript', 'Postgres', 'DynamoDB', 'Serverless', 'React', 'AWS', 'DDD']
+    techStack: ['Typescript', 'NodeJS', 'Postgres', 'DynamoDB', 'Serverless', 'React', 'AWS', 'DDD']
   },
   {
     title: 'Senior Software Engineer',
@@ -42,16 +41,16 @@ const experiences = [
     techStack: ['Java', 'Ruby (Test Automation)', 'AWS', 'Terraform', 'Postgres', 'MSSQL', 'DDD', 'TDD', 'CI using Jenkins']
   },
   {
-    title: 'Quality Analyst',
+    title: 'Software Consultant',
     company: 'Thoughtworks',
     location: 'Bengaluru, India',
     duration: 'November 2015 - February 2017',
     summary: [
-      'Swarup Worked as a QA in ThoughtWorks for an open-source product called Bahmni. Bahmni is a healthcare and hospital workflow management product.',
-      'He did manual testing as part of the delivery cycle as well as added automation tests to the existing test suites.',
+      'Swarup Worked as an SDET in ThoughtWorks for an open-source product called Bahmni. Bahmni is an open source healthcare and hospital workflow management product.',
+      'He did automation testing and Performance testing of APIs as part of the delivery cycle.',
       'He supported client implementation of the mentioned product. The clients were MSF (Médecins SansFrontières)',
     ],
-    techStack: ['Selenium', 'Ruby (Test Automation)', 'Capybara']
+    techStack: ['Selenium', 'Ruby (Test Automation)', 'Capybara', 'Gatling']
   },
   {
     title: 'Data Specialist',
@@ -59,11 +58,11 @@ const experiences = [
     location: 'Bengaluru, India',
     duration: 'November 2013 - October 2015',
     summary: [
-      'Swarup worked as Test Data Manager for a Big Data project that was trying to build a Credit RiskRating system.',
-      'Gathered requirements and test cases from the QA team and Dev team. Prepare test data accordingly',
-      'Scripts were written using Python to generate error-proof data and reduce dependency on manual data preparation.',
+      'Swarup worked as a Data Specialist for a Big Data project that was trying to build a Credit RiskRating system.',
+      'He analyzed various data captured from Source Systems and verified the same with the ETL documentations',
+      'He developed tools and scripts using Python to generate error-proof data for the ETL process and reduce dependency on manual data preparation.',
     ],
-    techStack: ['Python', 'VBA', 'Selenium']
+    techStack: ['Python', 'Hadoop', 'Hive', 'HBase', 'Pig']
   }
 ]
 
