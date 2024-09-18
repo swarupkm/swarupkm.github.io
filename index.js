@@ -6,7 +6,7 @@ const experiences = [
     duration: 'June 2022 - Present',
     summary: [
       'Swarup is working for Australian based clients as a Lead Software Engineer. Domains ranging from Eductech to Fintech',
-      'He helped startup clients launch their products and go from 0 to 1 using serverless architectures',
+      'He helped a client launch their trading platform to the market and go from 0 to 1 using serverless architectures',
       'He improved the existing CI and deployment process of the clients, thereby reducing the deployment time from many hours to few minutes.',
       'He introduced Trunk Based Development as part of this improvement.',
       'He was managing a team of 5 engineers and helped upskill the team by introducing to Domain Driven Design, Clean Architecture and other architectural principles.'
