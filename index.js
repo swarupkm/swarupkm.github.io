@@ -6,8 +6,8 @@ const experiences = [
     duration: 'June 2022 - Present',
     summary: [
       'Swarup is working for Australian based clients as a Lead Software Engineer. Domains ranging from Eductech to Fintech',
-      'He helped a client launch their trading platform to the market and go from 0 to 1 using serverless architectures',
-      'He improved the existing CI and deployment process of the clients, thereby reducing the deployment time from many hours to few minutes.',
+      'He helped a client launch their trading platform to the market and launch their product using serverless architectures',
+      'He improved the existing CI and deployment processes of the clients, thereby reducing the deployment time from many hours to few minutes.',
       'He introduced Trunk Based Development as part of this improvement.',
       'He was managing a team of 5 engineers and helped upskill the team by introducing to Domain Driven Design, Clean Architecture and other architectural principles.'
     ],
@@ -46,7 +46,7 @@ const experiences = [
     location: 'Bengaluru, India',
     duration: 'November 2015 - February 2017',
     summary: [
-      'Swarup Worked as an SDET in ThoughtWorks for an open-source product called Bahmni. Bahmni is an open source healthcare and hospital workflow management product.',
+      'Swarup Worked as an SDE in ThoughtWorks for an open-source product called Bahmni. Bahmni is an open source healthcare and hospital workflow management product.',
       'He did automation testing and Performance testing of APIs as part of the delivery cycle.',
       'He supported client implementation of the mentioned product. The clients were MSF (Médecins SansFrontières)',
     ],
