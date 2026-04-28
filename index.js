@@ -1,102 +1,118 @@
-const experiences = [
-  {
-    title: 'Lead Software Engineer',
-    company: 'Everest Engineering',
-    location: 'Bengaluru, India',
-    duration: 'June 2022 - Present',
-    summary: [
-      'Swarup is working for Australian based clients as a Lead Software Engineer. Domains ranging from Eductech to Fintech',
-      'He helped a client launch their trading platform to the market and launch their product using serverless architectures',
-      'He improved the existing CI and deployment processes of the clients, thereby reducing the deployment time from many hours to few minutes.',
-      'He introduced Trunk Based Development as part of this improvement.',
-      'He was managing a team of 5 engineers and helped upskill the team by introducing to Domain Driven Design, Clean Architecture and other architectural principles.'
-    ],
-    techStack: ['Typescript', 'NodeJS', 'Postgres', 'DynamoDB', 'Serverless', 'React', 'AWS', 'DDD']
-  },
-  {
-    title: 'Senior Software Engineer',
-    company: 'SOCASH PTE LTD (acquired by Nium)',
-    location: 'Bengaluru, India',
-    duration: 'November 2018 - May 2022',
-    summary: [
-      'Swarup worked in a Fintech startup as a backend developer, primarily focussing on the payments systems.',
-      'He worked with Banks like ICBC, DBS etc and Retail platforms like Grab, Shopee, and Linkaja to integrate their payment APIs into the merchant POS device.',
-      'For the above integration, he decomposed the existing Monolith (written in NodeJS) and build Payments micro-services using Java/Postgres tech stack.',
-      'He maintained and enhanced the existing products around CashWithdrawals and CashDeposits/Topups. This too involved working with partners providing APIs.',
-      'He assisted in setting up and mentoring the QA team for Performance tests and Automated externalAPI functional tests.',
-    ],
-    techStack: ['Java', 'NodeJS', 'Ruby (Test Automation)', 'AWS', 'Terraform', 'Postgres', 'Redis', 'RethinkDB(NoSQL DB)', 'DDD', 'TDD', 'CI using Jenkins']
-  },
-  {
-    title: 'Software Engineer',
-    company: 'Aconex (accquired by Oracle)',
-    location: 'Bengaluru, India',
-    duration: 'March 2017 - October 2018',
-    summary: [
-      'Swarup worked as a backend developer in Aconex for the Document review team.',
-      'He maintained and deployed multiple microservices across geographies.',
-      'Build APIs around PDF reviewing features which provided multiple customers with an ability to annotate/comment on the PDF actively worked on.',
-      'Setup Automated UI test infrastructure and framework for PDF review.',
-    ],
-    techStack: ['Java', 'Ruby (Test Automation)', 'AWS', 'Terraform', 'Postgres', 'MSSQL', 'DDD', 'TDD', 'CI using Jenkins']
-  },
-  {
-    title: 'Software Consultant',
-    company: 'Thoughtworks',
-    location: 'Bengaluru, India',
-    duration: 'November 2015 - February 2017',
-    summary: [
-      'Swarup Worked as an SDE in ThoughtWorks for an open-source product called Bahmni. Bahmni is an open source healthcare and hospital workflow management product.',
-      'He did automation testing and Performance testing of APIs as part of the delivery cycle.',
-      'He supported client implementation of the mentioned product. The clients were MSF (Médecins SansFrontières)',
-    ],
-    techStack: ['Selenium', 'Ruby (Test Automation)', 'Capybara', 'Gatling']
-  },
-  {
-    title: 'Data Specialist',
-    company: 'IBM',
-    location: 'Bengaluru, India',
-    duration: 'November 2013 - October 2015',
-    summary: [
-      'Swarup worked as a Data Specialist for a Big Data project that was trying to build a Credit RiskRating system.',
-      'He analyzed various data captured from Source Systems and verified the same with the ETL documentations',
-      'He developed tools and scripts using Python to generate error-proof data for the ETL process and reduce dependency on manual data preparation.',
-    ],
-    techStack: ['Python', 'Hadoop', 'Hive', 'HBase', 'Pig']
-  }
-]
+function renderContact(contact) {
+  const container = document.querySelector('.contact-items');
+  container.innerHTML = '';
 
-window.document.getElementsByClassName('all-experiences')[0].innerHTML = ''
+  const infoRows = [
+    { icon: 'map-marker', value: contact.location },
+    { icon: 'envelope', value: contact.email },
+    { icon: 'phone', value: contact.phone }
+  ];
 
-for (let exp of experiences) {
-  //
-  const node = document.createElement('div')
-  node.setAttribute('class', 'experience')
+  infoRows.forEach((row) => {
+    const rowNode = document.createElement('div');
+    const iconNode = document.createElement('i');
+    iconNode.className = `fa fa-${row.icon}`;
 
-  //
-  const titleNode = document.createElement('h3')
-  titleNode.setAttribute('class', 'title heading-color')
-  titleNode.innerText = exp.title
-  node.appendChild(titleNode)
+    const textNode = document.createElement('div');
+    textNode.textContent = ` ${row.value} `;
 
-  //
-  const companyNode = document.createElement('i')
-  companyNode.innerHTML = `${exp.company}, ${exp.location} | ${exp.duration}`
-  node.appendChild(companyNode)
+    rowNode.appendChild(iconNode);
+    rowNode.appendChild(textNode);
+    container.appendChild(rowNode);
+  });
 
-  //
-  const summaryNode = document.createElement('ul')
-  exp.summary.forEach(e => {
-    const _ = document.createElement('li')
-    _.innerText = e
-    summaryNode.appendChild(_)
-  })
-  node.appendChild(summaryNode)
+  const linksNode = document.createElement('div');
+  contact.links.forEach((link) => {
+    const anchorNode = document.createElement('a');
+    anchorNode.href = link.url;
+    anchorNode.target = '_blank';
 
-  //
-  const techStackNode = document.createElement('div')
-  techStackNode.innerHTML = `Tech Stack: ${exp.techStack.join(', ')}`
-  node.appendChild(techStackNode)
+    const iconNode = document.createElement('i');
+    iconNode.className = `fa fa-${link.icon}`;
 
-  window.document.getElementsByClassName('all-experiences')[0].appendChild(node)
+    anchorNode.appendChild(iconNode);
+    linksNode.appendChild(anchorNode);
+  });
+
+  container.appendChild(linksNode);
 }
+
+function renderEducation(education) {
+  document.querySelector('.education-degree').textContent = education.degree;
+  document.querySelector('.education-inst-duration').textContent = `${education.institute} | ${education.duration}`;
+  document.querySelector('.education-cgpa').textContent = `CGPA: ${education.cgpa}`;
+}
+
+function renderSkills(skills) {
+  const listNode = document.querySelector('.key-skills-list');
+  listNode.innerHTML = '';
+
+  skills.forEach((skillGroup) => {
+    const liNode = document.createElement('li');
+
+    const categoryNode = document.createElement('span');
+    categoryNode.className = 'heading-color';
+    categoryNode.textContent = `${skillGroup.category}: `;
+
+    liNode.appendChild(categoryNode);
+    liNode.appendChild(document.createElement('br'));
+    liNode.appendChild(document.createTextNode(skillGroup.items.join(', ')));
+    listNode.appendChild(liNode);
+  });
+}
+
+function renderExperiences(experiences) {
+  const experiencesNode = document.querySelector('.all-experiences');
+  experiencesNode.innerHTML = '';
+
+  experiences.forEach((exp) => {
+    const node = document.createElement('div');
+    node.setAttribute('class', 'experience');
+
+    const titleNode = document.createElement('h3');
+    titleNode.setAttribute('class', 'title heading-color');
+    titleNode.textContent = exp.title;
+    node.appendChild(titleNode);
+
+    const companyNode = document.createElement('i');
+    companyNode.textContent = `${exp.company}, ${exp.location} | ${exp.duration}`;
+    node.appendChild(companyNode);
+
+    const summaryNode = document.createElement('ul');
+    exp.summary.forEach((item) => {
+      const liNode = document.createElement('li');
+      liNode.textContent = item;
+      summaryNode.appendChild(liNode);
+    });
+    node.appendChild(summaryNode);
+
+    const techStackNode = document.createElement('div');
+    techStackNode.textContent = `Tech Stack: ${exp.techStack.join(', ')}`;
+    node.appendChild(techStackNode);
+
+    experiencesNode.appendChild(node);
+  });
+}
+
+async function loadProfileData() {
+  try {
+    const response = await fetch('data.json');
+    if (!response.ok) {
+      throw new Error(`Failed to load data.json: ${response.status}`);
+    }
+
+    const data = await response.json();
+    document.querySelector('.profile-name').textContent = data.name;
+    document.querySelector('.profile-role').textContent = data.role;
+    document.querySelector('.profile-summary').textContent = data.summary;
+
+    renderContact(data.contact);
+    renderEducation(data.education);
+    renderSkills(data.skills);
+    renderExperiences(data.experiences);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+window.addEventListener('DOMContentLoaded', loadProfileData);
