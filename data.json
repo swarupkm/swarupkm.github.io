@@ -25,30 +25,34 @@
 	"skills": [
 		{
 			"category": "Languages",
-			"items": ["Java", "Javascript", "Ruby", "Python"]
+			"items": ["Java", "JavaScript", "Ruby", "Python"]
 		},
 		{
 			"category": "Databases",
 			"items": ["Postgres", "DynamoDB"]
 		},
 		{
-			"category": "Cloud Technology",
+			"category": "Cloud Technologies",
 			"items": ["Amazon Web Services"]
 		},
 		{
 			"category": "CI/CD",
-			"items": ["Jenkins", "Github Actions"]
+			"items": ["Jenkins", "GitHub Actions", "GitLab"]
 		},
 		{
 			"category": "Infrastructure",
-			"items": ["Terraform", "AWS CDK", "SST", "Ansible"]
+			"items": ["Terraform", "AWS CDK", "Ansible"]
 		},
 		{
 			"category": "Practices",
 			"items": ["DDD", "TDD", "OOP", "Functional Programming"]
+		},
+		{
+		"category": "AI Tools",
+		"items": ["Prompt Engineering", "RAG", "Vector Databases"]
 		}
 	],
-	"summary": "A seasoned Lead Software Engineer who has more than 11 years of experience in the software industry. He has worked in services, startups and product based organizations.",
+	"summary": "Seasoned Lead Software Engineer with nearly 13 years of experience building and scaling software platforms across services, startups, and product organizations.",
 	"experiences": [
 		{
 			"title": "Lead Software Engineer",
@@ -56,13 +60,15 @@
 			"location": "Bengaluru, India",
 			"duration": "June 2022 - Present",
 			"summary": [
-				"Swarup is working for Australian based clients as a Lead Software Engineer. Domains ranging from Eductech to Fintech",
-				"He helped a client launch their trading platform to the market and launch their product using serverless architectures",
-				"He improved the existing CI and deployment processes of the clients, thereby reducing the deployment time from many hours to few minutes.",
-				"He introduced Trunk Based Development as part of this improvement.",
-				"He was managing a team of 5 engineers and helped upskill the team by introducing to Domain Driven Design, Clean Architecture and other architectural principles."
+				"Leading engineering engagements for Australian clients across EdTech, FinTech, and Clinical Research domains.",
+				"Supporting a clinical research team in analyzing allergy study data using AI-enabled workflows and building a scalable data pipeline platform.",
+				"Implemented study metadata analysis using LLMs and enabled clinical concept search through RAG-based solutions.",
+				"Helped launch a client trading platform to market by building and scaling serverless cloud architecture.",
+				"Modernized CI/CD and deployment processes, reducing release timelines from hours to minutes.",
+				"Introduced trunk-based development to improve delivery speed, code quality, and collaboration.",
+				"Managed and mentored a team of 5 engineers, driving capability uplift in Domain-Driven Design and Clean Architecture principles."
 			],
-			"techStack": ["Typescript", "NodeJS", "Postgres", "DynamoDB", "Serverless", "React", "AWS", "DDD"]
+			"techStack": ["Python", "TypeScript", "NodeJS", "Postgres", "DynamoDB", "Serverless", "React", "AWS", "DDD"]
 		},
 		{
 			"title": "Senior Software Engineer",
@@ -70,24 +76,24 @@
 			"location": "Bengaluru, India",
 			"duration": "November 2018 - May 2022",
 			"summary": [
-				"Swarup worked in a Fintech startup as a backend developer, primarily focussing on the payments systems.",
-				"He worked with Banks like ICBC, DBS etc and Retail platforms like Grab, Shopee, and Linkaja to integrate their payment APIs into the merchant POS device.",
-				"For the above integration, he decomposed the existing Monolith (written in NodeJS) and build Payments micro-services using Java/Postgres tech stack.",
-				"He maintained and enhanced the existing products around CashWithdrawals and CashDeposits/Topups. This too involved working with partners providing APIs.",
-				"He assisted in setting up and mentoring the QA team for Performance tests and Automated externalAPI functional tests."
+				"Worked as a backend engineer in a FinTech startup, with a primary focus on payments systems.",
+				"Integrated payment APIs for banks (ICBC, DBS) and retail platforms (Grab, Shopee, LinkAja) into merchant POS ecosystems.",
+				"Decomposed a Node.js monolith and built payment microservices using Java and PostgreSQL.",
+				"Enhanced cash withdrawal and cash deposit/top-up products through partner API integrations.",
+				"Helped establish and mentor the QA team for performance testing and automated external API functional testing."
 			],
-			"techStack": ["Java", "NodeJS", "Ruby (Test Automation)", "AWS", "Terraform", "Postgres", "Redis", "RethinkDB(NoSQL DB)", "DDD", "TDD", "CI using Jenkins"]
+			"techStack": ["Java", "NodeJS", "Ruby (Test Automation)", "AWS", "Terraform", "Postgres", "Redis", "RethinkDB (NoSQL DB)", "DDD", "TDD", "CI using Jenkins"]
 		},
 		{
 			"title": "Software Engineer",
-			"company": "Aconex (accquired by Oracle)",
+			"company": "Aconex (acquired by Oracle)",
 			"location": "Bengaluru, India",
 			"duration": "March 2017 - October 2018",
 			"summary": [
-				"Swarup worked as a backend developer in Aconex for the Document review team.",
-				"He maintained and deployed multiple microservices across geographies.",
-				"Build APIs around PDF reviewing features which provided multiple customers with an ability to annotate/comment on the PDF actively worked on.",
-				"Setup Automated UI test infrastructure and framework for PDF review."
+				"Worked as a backend engineer in the Document Review team at Aconex.",
+				"Maintained and deployed multiple microservices across regions.",
+				"Built APIs for PDF review workflows, enabling customers to annotate and comment on documents in real time.",
+				"Set up automated UI testing infrastructure and framework for PDF review features."
 			],
 			"techStack": ["Java", "Ruby (Test Automation)", "AWS", "Terraform", "Postgres", "MSSQL", "DDD", "TDD", "CI using Jenkins"]
 		},
@@ -97,9 +103,9 @@
 			"location": "Bengaluru, India",
 			"duration": "November 2015 - February 2017",
 			"summary": [
-				"Swarup Worked as an SDE in ThoughtWorks for an open-source product called Bahmni. Bahmni is an open source healthcare and hospital workflow management product.",
-				"He did automation testing and Performance testing of APIs as part of the delivery cycle.",
-				"He supported client implementation of the mentioned product. The clients were MSF (Médecins SansFrontières)"
+				"Worked as a software developer at Thoughtworks on Bahmni, an open-source healthcare and hospital workflow platform.",
+				"Delivered API automation and performance testing as part of the product delivery cycle.",
+				"Supported client implementations for MSF (Médecins Sans Frontières)."
 			],
 			"techStack": ["Selenium", "Ruby (Test Automation)", "Capybara", "Gatling"]
 		},
@@ -109,9 +115,9 @@
 			"location": "Bengaluru, India",
 			"duration": "November 2013 - October 2015",
 			"summary": [
-				"Swarup worked as a Data Specialist for a Big Data project that was trying to build a Credit RiskRating system.",
-				"He analyzed various data captured from Source Systems and verified the same with the ETL documentations",
-				"He developed tools and scripts using Python to generate error-proof data for the ETL process and reduce dependency on manual data preparation."
+				"Worked as a Data Specialist on a Big Data initiative to build a credit risk rating system.",
+				"Analyzed source-system data and validated mappings against ETL documentation.",
+				"Developed Python tools and scripts to generate reliable ETL test data, reducing dependency on manual data preparation."
 			],
 			"techStack": ["Python", "Hadoop", "Hive", "HBase", "Pig"]
 		}
