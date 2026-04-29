@@ -1,3 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@600;700&display=swap");
+
+:root {
+  --color-primary: #1f3a5f;
+  --color-accent: #0f766e;
+  --color-text: #1f2937;
+  --color-muted: #4b5563;
+  --color-left-bg: #f3f6fa;
+  --color-border: #d6dee8;
+}
+
 .flex-container {
   display: flex;
 }
@@ -18,21 +29,29 @@ body {
   min-height: 100vh;
   margin: auto;
   padding: 16px;
-  font-family: 'RobotoFont';
+  font-family: "Lato", Arial, sans-serif;
+  color: var(--color-text);
 }
 
 .container {
   border-width: 10px;
   border-style: solid;
-  border-color: #f5f1ee;
+  border-color: var(--color-border);
 }
 
 .heading-color {
-  color: #a71b24;
+  color: var(--color-primary);
 }
 
 .name {
   font-size: 36px;
+}
+
+.name,
+h2,
+h3,
+.heading-color {
+  font-family: "Playfair Display", Georgia, serif;
 }
 
 .profession {
@@ -54,7 +73,7 @@ body {
 
 .left {
   width: 32%;
-  background-color: #f5f1ee;
+  background-color: var(--color-left-bg);
   padding: 2%;
   overflow-wrap: anywhere;
 }
@@ -66,7 +85,7 @@ body {
 }
 
 li::marker {
-  color: #a71b24;
+  color: var(--color-primary);
 }
 
 li {
@@ -84,6 +103,7 @@ ul{
 
 .contact {
   font-size: 14px;
+  color: var(--color-muted);
 }
 
 .contact i {
@@ -114,7 +134,12 @@ ul{
 }
 
 .social-links a:hover {
-  color: #a71b24;
+  color: var(--color-accent);
+}
+
+.education-inst-duration,
+.education-cgpa {
+  color: var(--color-muted);
 }
 
 @media (max-width: 900px) {
@@ -153,7 +178,7 @@ ul{
 
   .container {
     border-width: 4px;
-    border-color: #e8dfd9;
+    border-color: var(--color-border);
   }
 
   .left,
