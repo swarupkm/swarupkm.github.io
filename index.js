@@ -1,4 +1,4 @@
-const profileData = {
+const baseProfileData = {
   name: 'Swarup Mahapatra',
   role: 'Lead Software Engineer',
   contact: {
@@ -45,14 +45,14 @@ const profileData = {
     },
     {
       category: 'Practices',
-      items: ['DDD', 'TDD', 'OOP', 'Functional Programming']
+      items: ['DDD', 'TDD', 'OOP', 'Functional Programming', 'System Design', 'Distributed Systems']
     },
     {
       category: 'AI Tools',
-      items: ['Prompt Engineering', 'RAG', 'Vector Databases']
+      items: ['Prompt Engineering', 'RAG', 'Vector Databases', 'Spec Driven Development']
     }
   ],
-  summary: 'Seasoned Lead Software Engineer with nearly 13 years of experience building and scaling software platforms across services, startups, and product organizations.',
+  summary: 'Engineering leader with nearly 13 years of experience designing scalable systems, driving technical strategy, and building cloud-native platforms across startups, product teams, and consulting environments.',
   experiences: [
     {
       title: 'Lead Software Engineer',
@@ -60,13 +60,14 @@ const profileData = {
       location: 'Bengaluru, India',
       duration: 'June 2022 - Present',
       summary: [
-        'Leading engineering engagements for Australian clients across EdTech, FinTech, and Clinical Research domains.',
-        'Supporting a clinical research team in analyzing allergy study data using AI-enabled workflows and building a scalable data pipeline platform.',
-        'Implemented study metadata analysis using LLMs and enabled clinical concept search through RAG-based solutions.',
-        'Helped launch a client trading platform to market by building and scaling serverless cloud architecture.',
-        'Modernized CI/CD and deployment processes, reducing release timelines from hours to minutes.',
-        'Introduced trunk-based development to improve delivery speed, code quality, and collaboration.',
-        'Managed and mentored a team of 5 engineers, driving capability uplift in Domain-Driven Design and Clean Architecture principles.'
+        'Led multiple engineering engagements at Everest Engineering, guiding teams of 3–6 engineers across client-facing initiatives.',
+        'Partnered with product and business stakeholders to define and deliver complex engineering initiatives across client engagements.',
+        'Led technical strategy and execution for AI-enabled workflows, cloud-native platforms, and scalable data systems in clinical research.',
+        'Architected and implemented study metadata analysis using LLMs and RAG-based concept search for distributed data workflows.',
+        'Drove the design and delivery of a serverless cloud architecture and API platform that enabled a trading platform launch.',
+        'Modernized CI/CD and release practices, reducing delivery timelines from hours to minutes.',
+        'Introduced trunk-based development and improved engineering quality, collaboration, and velocity.',
+        'Mentored engineers across multiple teams and strengthened architectural practices in Domain-Driven Design and clean architecture.'
       ],
       techStack: ['Python', 'TypeScript', 'NodeJS', 'Postgres', 'DynamoDB', 'Serverless', 'React', 'AWS', 'DDD']
     },
@@ -76,11 +77,11 @@ const profileData = {
       location: 'Bengaluru, India',
       duration: 'November 2018 - May 2022',
       summary: [
-        'Worked as a backend engineer in a FinTech startup, with a primary focus on payments systems.',
-        'Integrated payment APIs for banks (ICBC, DBS) and retail platforms (Grab, Shopee, LinkAja) into merchant POS ecosystems.',
-        'Decomposed a Node.js monolith and built payment microservices using Java and PostgreSQL.',
-        'Enhanced cash withdrawal and cash deposit/top-up products through partner API integrations.',
-        'Helped establish and mentor the QA team for performance testing and automated external API functional testing.'
+        'Designed and scaled payment platform capabilities for a fintech startup, with a focus on reliability, extensibility, throughput, and distributed systems.',
+        'Integrated payment APIs for banks and retail platforms, improving merchant POS ecosystem capabilities.',
+        'Re-architected a Node.js monolith into modular payment microservices using Java, PostgreSQL, and platform-oriented service design.',
+        'Improved cash withdrawal and top-up experiences through secure, partner-driven integrations.',
+        'Built and scaled the QA function to support performance and API reliability across critical payment flows.'
       ],
       techStack: ['Java', 'NodeJS', 'Ruby (Test Automation)', 'AWS', 'Terraform', 'Postgres', 'Redis', 'RethinkDB (NoSQL DB)', 'DDD', 'TDD', 'CI using Jenkins']
     },
@@ -90,10 +91,10 @@ const profileData = {
       location: 'Bengaluru, India',
       duration: 'March 2017 - October 2018',
       summary: [
-        'Worked as a backend engineer in the Document Review team at Aconex.',
-        'Maintained and deployed multiple microservices across regions.',
-        'Built APIs for PDF review workflows, enabling customers to annotate and comment on documents in real time.',
-        'Set up automated UI testing infrastructure and framework for PDF review features.'
+        'Contributed to backend services and platform reliability across document review workflows at Aconex.',
+        'Maintained and deployed distributed microservices across regions with a strong focus on availability.',
+        'Built APIs for real-time PDF review collaboration, supporting customer-facing document annotation workflows.',
+        'Established automated UI testing infrastructure for core review features.'
       ],
       techStack: ['Java', 'Ruby (Test Automation)', 'AWS', 'Terraform', 'Postgres', 'MSSQL', 'DDD', 'TDD', 'CI using Jenkins']
     },
@@ -103,9 +104,9 @@ const profileData = {
       location: 'Bengaluru, India',
       duration: 'November 2015 - February 2017',
       summary: [
-        'Worked as a software developer at Thoughtworks on Bahmni, an open-source healthcare and hospital workflow platform.',
-        'Delivered API automation and performance testing as part of the product delivery cycle.',
-        'Supported client implementations for MSF (Médecins Sans Frontières).'
+        'Delivered software solutions on Bahmni, an open-source healthcare workflow platform, in a collaborative consulting environment.',
+        'Implemented API automation and performance testing to support product quality and delivery.',
+        'Supported client implementations for Médecins Sans Frontières (MSF), contributing to mission-critical workflows.'
       ],
       techStack: ['Selenium', 'Ruby (Test Automation)', 'Capybara', 'Gatling']
     },
@@ -115,14 +116,16 @@ const profileData = {
       location: 'Bengaluru, India',
       duration: 'November 2013 - October 2015',
       summary: [
-        'Worked as a Data Specialist on a Big Data initiative to build a credit risk rating system.',
-        'Analyzed source-system data and validated mappings against ETL documentation.',
-        'Developed Python tools and scripts to generate reliable ETL test data, reducing dependency on manual data preparation.'
+        'Contributed to a big data initiative to build a credit risk rating system with a focus on data quality and pipeline reliability.',
+        'Analyzed source data and validated ETL mappings against business and technical documentation.',
+        'Developed Python tools and scripts to generate reliable ETL test data and streamline data preparation workflows.'
       ],
       techStack: ['Python', 'Hadoop', 'Hive', 'HBase', 'Pig']
     }
   ]
 };
+
+let currentResumeData = JSON.parse(JSON.stringify(baseProfileData));
 
 function renderContact(contact) {
   const container = document.querySelector('.contact-items');
@@ -217,6 +220,7 @@ function renderExperiences(experiences) {
     node.appendChild(summaryNode);
 
     const techStackNode = document.createElement('div');
+    techStackNode.className = 'tech-stack';
     techStackNode.textContent = `Tech Stack: ${exp.techStack.join(', ')}`;
     node.appendChild(techStackNode);
 
@@ -224,8 +228,7 @@ function renderExperiences(experiences) {
   });
 }
 
-function loadProfileData() {
-  const data = profileData;
+function renderResumeData(data) {
   document.querySelector('.profile-name').textContent = data.name;
   document.querySelector('.profile-role').textContent = data.role;
   document.querySelector('.profile-summary').textContent = data.summary;
@@ -234,6 +237,11 @@ function loadProfileData() {
   renderEducation(data.education);
   renderSkills(data.skills);
   renderExperiences(data.experiences);
+}
+
+function loadProfileData() {
+  currentResumeData = JSON.parse(JSON.stringify(baseProfileData));
+  renderResumeData(currentResumeData);
 }
 
 window.addEventListener('DOMContentLoaded', loadProfileData);
