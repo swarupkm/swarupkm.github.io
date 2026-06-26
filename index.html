@@ -6,14 +6,23 @@
     <title>Swarup Mahapatra | Resume</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="styles.css"/>
+    <link rel="stylesheet" media="print" href="print.css"/>
     <script src="index.js" defer></script>
   </head>
   <body>
+    <!-- Plain-text ATS header: no background, no FA icons, no border.
+         Sits before the styled container so it is always first in the PDF
+         text stream, regardless of Chrome's compositing order. -->
+    <div class="ats-pre-header"></div>
     <div class="flex-container container">
       <div class="profile-header">
         <h1 class="name heading-color profile-name"></h1>
         <h2 class="heading-color profile-role"></h2>
         <div class="contact contact-items"></div>
+      </div>
+      <div class="summary">
+        <h2 class="heading-color">Summary</h2>
+        <p class="profile-summary"></p>
       </div>
       <div class="content-columns">
         <div class="left">
@@ -30,10 +39,6 @@
           </div>
         </div>
         <div class="right">
-          <div class="summary">
-            <h2 class="heading-color">Summary</h2>
-            <p class="profile-summary"></p>
-          </div>
           <div>
             <h2 class="heading-color">Professional Experience</h2>
             <div class="all-experiences"></div>

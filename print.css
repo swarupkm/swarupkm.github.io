@@ -1,0 +1,267 @@
+/* Print styles — loaded via <link media="print">, no @media wrapper needed */
+
+@page {
+  size: A4;
+  margin: 5mm 6mm 5mm 6mm;
+}
+
+html,
+body {
+  width: 198mm;
+  max-width: none;
+  min-height: auto;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  font-size: 9.8px;
+  line-height: 1.2;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+.container {
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+/* ── ATS pre-header ── */
+.ats-pre-header {
+  display: block;
+  padding: 8px 10px 7px 13px;
+  border-left: 4px solid var(--color-accent);
+  border-bottom: 1.5px solid #c8d5e4;
+  background-color: #f5f8ff;
+  font-family: "Lato", Arial, sans-serif;
+}
+
+.ats-name {
+  display: block;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1.1;
+  margin-bottom: 1px;
+}
+
+.ats-role {
+  display: block;
+  font-size: 8.5px;
+  font-weight: 700;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  margin-bottom: 5px;
+}
+
+.ats-contact-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px 14px;
+}
+
+.ats-contact-item {
+  font-size: 8.5px;
+  color: var(--color-muted);
+}
+
+.ats-contact-label {
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.ats-contact-item a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+/* Hide the visual header — replaced by .ats-pre-header */
+.profile-header {
+  display: none;
+}
+
+/* ── Summary — standalone, naturally sits before education/experience ── */
+.summary {
+  padding: 4px 8px 5px;
+  border-bottom: none;
+}
+
+.summary p {
+  font-size: 9px;
+  line-height: 1.22;
+}
+
+/* ── Single-column: education/skills (left, order 1) before experience (right, order 2) ── */
+.content-columns {
+  flex-direction: column;
+}
+
+.left {
+  order: 1;
+  width: 100%;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  background: #f7f9fc;
+  border-right: none;
+  border-bottom: 1px solid #dde4ed;
+  padding: 5px 8px 6px;
+}
+
+.right {
+  order: 2;
+  width: 100%;
+  padding: 5px 8px 4px;
+}
+
+/* Education and skills side-by-side within the left band */
+.left > div {
+  flex: 1;
+}
+
+.name {
+  font-size: 17px;
+  line-height: 1.05;
+  margin: 0 0 1px;
+}
+
+.profile-role {
+  font-size: 9px;
+  line-height: 1.1;
+  margin: 0 0 2px;
+}
+
+h2 {
+  font-size: 10.5px;
+  margin: 2px 0 3px;
+  padding-bottom: 2px;
+  border-bottom-width: 1.5px;
+}
+
+h3 {
+  font-size: 10px;
+  margin: 0 0 1px;
+}
+
+.contact {
+  font-size: 9px;
+  gap: 2px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  column-gap: 14px;
+}
+
+.social-links {
+  margin-top: 3px;
+  font-size: 10px;
+  gap: 10px;
+}
+
+.social-label {
+  font-size: 9px;
+}
+
+.profile-header .fa {
+  display: none;
+}
+
+.profile-header .sr-only {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.all-experiences {
+  gap: 4px;
+}
+
+.experience {
+  padding: 4px 6px 4px 8px;
+  border-width: 1px;
+  border-left-width: 3px;
+  border-left-color: var(--color-exp-border);
+  box-shadow: none;
+  break-inside: avoid;
+  page-break-inside: avoid;
+  background: #f7fbff;
+}
+
+.experience:hover {
+  box-shadow: none;
+}
+
+.experience i {
+  font-size: 9px;
+  margin-bottom: 2px;
+}
+
+.experience ul {
+  margin: 2px 0 3px;
+  padding-left: 11px;
+}
+
+.experience li {
+  margin-bottom: 1px;
+  line-height: 1.16;
+  font-size: 9px;
+}
+
+.experience .tech-stack {
+  margin-top: 4px;
+  gap: 3px;
+}
+
+.tech-pill {
+  font-size: 8px;
+  padding: 1px 6px;
+  border-radius: 999px;
+  background: #e4f0fa;
+  border-color: #a8c8ee;
+}
+
+.key-skills-list {
+  gap: 2px;
+}
+
+.key-skills-list li {
+  line-height: 1.18;
+  font-size: 9px;
+  padding-left: 6px;
+  border-left-width: 1.5px;
+}
+
+.skills {
+  margin-top: 5px;
+}
+
+.education-degree {
+  font-size: 9.5px;
+}
+
+.education-inst-duration,
+.education-cgpa {
+  font-size: 9px;
+  white-space: nowrap;
+}
+
+h1,
+h2,
+h3 {
+  break-after: avoid;
+  page-break-after: avoid;
+}
+
+.all-experiences,
+.skills,
+.summary,
+.contact {
+  break-inside: auto;
+  page-break-inside: auto;
+}

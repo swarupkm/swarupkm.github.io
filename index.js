@@ -8,10 +8,12 @@ const baseProfileData = {
     links: [
       {
         icon: 'linkedin',
+        label: 'LinkedIn',
         url: 'https://www.linkedin.com/in/swarupmahapatra1/'
       },
       {
         icon: 'github',
+        label: 'GitHub',
         url: 'https://github.com/swarupkm'
       }
     ]
@@ -37,15 +39,15 @@ const baseProfileData = {
     },
     {
       category: 'CI/CD',
-      items: ['Jenkins', 'GitHub Actions', 'GitLab']
+      items: ['Jenkins', 'GitHub Actions', 'GitLab', 'Git']
     },
     {
       category: 'Infrastructure',
-      items: ['Terraform', 'AWS CDK', 'Ansible']
+      items: ['Terraform', 'AWS CDK', 'Ansible', 'Docker']
     },
     {
       category: 'Practices',
-      items: ['DDD', 'TDD', 'OOP', 'Functional Programming', 'System Design', 'Distributed Systems']
+      items: ['DDD', 'TDD', 'OOP', 'Functional Programming', 'System Design', 'Distributed Systems', 'Agile', 'Scrum']
     },
     {
       category: 'AI Tools',
@@ -64,12 +66,13 @@ const baseProfileData = {
         'Partnered with product and business stakeholders to define and deliver complex engineering initiatives across client engagements.',
         'Led technical strategy and execution for AI-enabled workflows, cloud-native platforms, and scalable data systems in clinical research.',
         'Architected and implemented study metadata analysis using LLMs and RAG-based concept search for distributed data workflows.',
-        'Drove the design and delivery of a serverless cloud architecture and API platform that enabled a trading platform launch.',
+        'Drove the design and delivery of a serverless REST API platform and cloud architecture that enabled a trading platform launch.',
         'Modernized CI/CD and release practices, reducing delivery timelines from hours to minutes.',
+        'Established observability and monitoring practices using distributed tracing and CloudWatch to support cloud-native service reliability.',
         'Introduced trunk-based development and improved engineering quality, collaboration, and velocity.',
         'Mentored engineers across multiple teams and strengthened architectural practices in Domain-Driven Design and clean architecture.'
       ],
-      techStack: ['Python', 'TypeScript', 'NodeJS', 'Postgres', 'DynamoDB', 'Serverless', 'React', 'AWS', 'DDD']
+      techStack: ['Python', 'TypeScript', 'NodeJS', 'Postgres', 'DynamoDB', 'Serverless', 'Docker', 'React', 'AWS', 'DDD']
     },
     {
       title: 'Senior Software Engineer',
@@ -81,7 +84,7 @@ const baseProfileData = {
         'Integrated payment APIs for banks and retail platforms, improving merchant POS ecosystem capabilities.',
         'Re-architected a Node.js monolith into modular payment microservices using Java, PostgreSQL, and platform-oriented service design.',
         'Improved cash withdrawal and top-up experiences through secure, partner-driven integrations.',
-        'Built and scaled the QA function to support performance and API reliability across critical payment flows.'
+        'Built and scaled the QA function with monitoring and observability tooling to support performance and API reliability across critical payment flows.'
       ],
       techStack: ['Java', 'NodeJS', 'Ruby (Test Automation)', 'AWS', 'Terraform', 'Postgres', 'Redis', 'RethinkDB (NoSQL DB)', 'DDD', 'TDD', 'CI using Jenkins']
     },
@@ -93,7 +96,7 @@ const baseProfileData = {
       summary: [
         'Contributed to backend services and platform reliability across document review workflows at Aconex.',
         'Maintained and deployed distributed microservices across regions with a strong focus on availability.',
-        'Built APIs for real-time PDF review collaboration, supporting customer-facing document annotation workflows.',
+        'Built REST APIs for real-time PDF review collaboration, supporting customer-facing document annotation workflows.',
         'Established automated UI testing infrastructure for core review features.'
       ],
       techStack: ['Java', 'Ruby (Test Automation)', 'AWS', 'Terraform', 'Postgres', 'MSSQL', 'DDD', 'TDD', 'CI using Jenkins']
@@ -132,22 +135,28 @@ function renderContact(contact) {
   container.innerHTML = '';
 
   const infoRows = [
-    { icon: 'map-marker', value: contact.location },
-    { icon: 'envelope', value: contact.email },
-    { icon: 'phone', value: contact.phone }
+    { icon: 'map-marker', label: 'Location', value: contact.location },
+    { icon: 'envelope', label: 'Email', value: contact.email },
+    { icon: 'phone', label: 'Phone', value: contact.phone }
   ];
 
   infoRows.forEach((row) => {
     const rowNode = document.createElement('div');
     rowNode.className = 'contact-row';
 
+    const srLabelNode = document.createElement('span');
+    srLabelNode.className = 'sr-only';
+    srLabelNode.textContent = row.label + ': ';
+
     const iconNode = document.createElement('i');
     iconNode.className = `fa fa-${row.icon}`;
+    iconNode.setAttribute('aria-hidden', 'true');
 
     const textNode = document.createElement('div');
     textNode.className = 'contact-text';
-    textNode.textContent = ` ${row.value} `;
+    textNode.textContent = row.value;
 
+    rowNode.appendChild(srLabelNode);
     rowNode.appendChild(iconNode);
     rowNode.appendChild(textNode);
     container.appendChild(rowNode);
@@ -163,8 +172,14 @@ function renderContact(contact) {
 
     const iconNode = document.createElement('i');
     iconNode.className = `fa fa-${link.icon}`;
+    iconNode.setAttribute('aria-hidden', 'true');
+
+    const labelNode = document.createElement('span');
+    labelNode.className = 'social-label';
+    labelNode.textContent = link.label;
 
     anchorNode.appendChild(iconNode);
+    anchorNode.appendChild(labelNode);
     linksNode.appendChild(anchorNode);
   });
 
@@ -221,11 +236,68 @@ function renderExperiences(experiences) {
 
     const techStackNode = document.createElement('div');
     techStackNode.className = 'tech-stack';
-    techStackNode.textContent = `Tech Stack: ${exp.techStack.join(', ')}`;
+    exp.techStack.forEach((tech) => {
+      const pill = document.createElement('span');
+      pill.className = 'tech-pill';
+      pill.textContent = tech;
+      techStackNode.appendChild(pill);
+    });
     node.appendChild(techStackNode);
 
     experiencesNode.appendChild(node);
   });
+}
+
+function renderATSPreHeader(data) {
+  const el = document.querySelector('.ats-pre-header');
+  if (!el) return;
+  const { contact } = data;
+
+  const nameEl = document.createElement('div');
+  nameEl.className = 'ats-name';
+  nameEl.textContent = data.name;
+
+  const roleEl = document.createElement('div');
+  roleEl.className = 'ats-role';
+  roleEl.textContent = data.role;
+
+  const contactRow = document.createElement('div');
+  contactRow.className = 'ats-contact-row';
+
+  const items = [
+    { label: 'Location', value: contact.location },
+    { label: 'Email',    value: contact.email },
+    { label: 'Phone',    value: contact.phone },
+    ...contact.links.map(l => ({ label: l.label, value: l.url, href: l.url }))
+  ];
+
+  items.forEach((item) => {
+    const span = document.createElement('span');
+    span.className = 'ats-contact-item';
+
+    const labelSpan = document.createElement('span');
+    labelSpan.className = 'ats-contact-label';
+    labelSpan.textContent = item.label + ':';
+
+    span.appendChild(labelSpan);
+    span.appendChild(document.createTextNode(' '));
+
+    if (item.href) {
+      const a = document.createElement('a');
+      a.href = item.href;
+      a.textContent = item.value;
+      span.appendChild(a);
+    } else {
+      span.appendChild(document.createTextNode(item.value));
+    }
+
+    contactRow.appendChild(span);
+  });
+
+  el.innerHTML = '';
+  el.appendChild(nameEl);
+  el.appendChild(roleEl);
+  el.appendChild(contactRow);
 }
 
 function renderResumeData(data) {
@@ -233,6 +305,7 @@ function renderResumeData(data) {
   document.querySelector('.profile-role').textContent = data.role;
   document.querySelector('.profile-summary').textContent = data.summary;
 
+  renderATSPreHeader(data);
   renderContact(data.contact);
   renderEducation(data.education);
   renderSkills(data.skills);
