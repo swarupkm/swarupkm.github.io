@@ -54,7 +54,7 @@ const baseProfileData = {
       items: ['Prompt Engineering', 'RAG', 'Vector Databases', 'Spec Driven Development']
     }
   ],
-  summary: 'Engineering leader with nearly 13 years of experience designing scalable systems, driving technical strategy, and building cloud-native platforms across startups, product teams, and consulting environments.',
+  summary: 'Engineering leader with nearly 13 years of experience shaping technical strategy, designing resilient distributed systems, and delivering cloud-native platforms across fintech, healthcare, and enterprise software. Proven ability to turn ambiguous business and product problems into production-ready systems, drive architecture across teams, and build compliance-aware workflows that improve operational resilience and software quality.',
   experiences: [
     {
       title: 'Lead Software Engineer',
@@ -62,15 +62,15 @@ const baseProfileData = {
       location: 'Bengaluru, India',
       duration: 'June 2022 - Present',
       summary: [
-        'Led multiple engineering engagements at Everest Engineering, guiding teams of 3–6 engineers across client-facing initiatives.',
-        'Partnered with product and business stakeholders to define and deliver complex engineering initiatives across client engagements.',
-        'Led technical strategy and execution for AI-enabled workflows, cloud-native platforms, and scalable data systems in clinical research.',
-        'Architected and implemented study metadata analysis using LLMs and RAG-based concept search for distributed data workflows.',
-        'Drove the design and delivery of a serverless REST API platform and cloud architecture that enabled a trading platform launch.',
-        'Modernized CI/CD and release practices, reducing delivery timelines from hours to minutes.',
-        'Established observability and monitoring practices using distributed tracing and CloudWatch to support cloud-native service reliability.',
-        'Introduced trunk-based development and improved engineering quality, collaboration, and velocity.',
-        'Mentored engineers across multiple teams and strengthened architectural practices in Domain-Driven Design and clean architecture.'
+        'Led technical direction across multiple client engagements, guiding teams of 3-6 engineers from problem framing through production delivery in complex, high-ambiguity environments.',
+        'Partnered with product and business stakeholders to shape architecture, prioritize initiatives, and align engineering execution with business outcomes.',
+        'Designed AI-assisted workflows for identifying PII and parsing participant consent responses across clinical study data, supporting compliance-aware research operations at scale.',
+        'Built data preprocessing and prompt-based decision-tree pipelines to classify consent and sensitive information across ~10 clinical studies per year with ~10,000 participants per study, achieving ~80% parsing accuracy and reducing manual review effort by ~90%.',
+        'Architected study metadata analysis using LLMs and retrieval-augmented generation to enable concept search across distributed research data workflows.',
+        'Drove the design and delivery of a serverless REST API platform and AWS foundation that enabled a trading platform launch in a fast-moving product environment.',
+        'Modernized CI/CD and release engineering, reducing deployment timelines from hours to minutes and improving confidence in frequent, reliable releases.',
+        'Established distributed tracing, CloudWatch monitoring, and operational practices that improved visibility into service health and strengthened cloud-native reliability.',
+        'Mentored engineers and coached teams on system design, Domain-Driven Design, clean architecture, and delivery best practices that improved engineering quality and velocity.'
       ],
       techStack: ['Python', 'TypeScript', 'NodeJS', 'Postgres', 'DynamoDB', 'Serverless', 'Docker', 'React', 'AWS', 'DDD']
     },
@@ -80,11 +80,12 @@ const baseProfileData = {
       location: 'Bengaluru, India',
       duration: 'November 2018 - May 2022',
       summary: [
-        'Designed and scaled payment platform capabilities for a fintech startup, with a focus on reliability, extensibility, throughput, and distributed systems.',
-        'Integrated payment APIs for banks and retail platforms, improving merchant POS ecosystem capabilities.',
-        'Re-architected a Node.js monolith into modular payment microservices using Java, PostgreSQL, and platform-oriented service design.',
-        'Improved cash withdrawal and top-up experiences through secure, partner-driven integrations.',
-        'Built and scaled the QA function with monitoring and observability tooling to support performance and API reliability across critical payment flows.'
+        'Shaped the architecture and technical roadmap for a fintech payment platform, balancing reliability, throughput, extensibility, and operational resilience in a high-stakes transaction environment.',
+        'Led integrations with banks and retail partners, expanding the merchant POS ecosystem through secure, partner-facing APIs across a multi-country payment footprint.',
+        'Built and operated a payment gateway integrating 15 banks and vendors, supporting ~10,000 transactions per day for ~500 merchants across 4 countries.',
+        'Re-architected a Node.js monolith into modular Java payment services, establishing clearer service boundaries, ownership models, and a platform-oriented design for long-term scalability.',
+        'Automated provider failover and configuration management to detect downstream outages and switch payment routes, reducing manual intervention during partner disruptions and improving resilience.',
+        'Built and scaled quality engineering practices with performance testing, monitoring, and observability for critical payment APIs, increasing system stability and operational visibility.'
       ],
       techStack: ['Java', 'NodeJS', 'Ruby (Test Automation)', 'AWS', 'Terraform', 'Postgres', 'Redis', 'RethinkDB (NoSQL DB)', 'DDD', 'TDD', 'CI using Jenkins']
     },
@@ -94,10 +95,10 @@ const baseProfileData = {
       location: 'Bengaluru, India',
       duration: 'March 2017 - October 2018',
       summary: [
-        'Contributed to backend services and platform reliability across document review workflows at Aconex.',
-        'Maintained and deployed distributed microservices across regions with a strong focus on availability.',
-        'Built REST APIs for real-time PDF review collaboration, supporting customer-facing document annotation workflows.',
-        'Established automated UI testing infrastructure for core review features.'
+        'Designed and delivered backend capabilities for document review workflows, with direct ownership of customer-facing service behavior.',
+        'Operated and deployed distributed microservices across regions, prioritizing availability, resilience, and predictable releases.',
+        'Built REST APIs for real-time PDF review collaboration and document annotation workflows.',
+        'Established automated UI testing infrastructure that improved regression coverage for core review features.'
       ],
       techStack: ['Java', 'Ruby (Test Automation)', 'AWS', 'Terraform', 'Postgres', 'MSSQL', 'DDD', 'TDD', 'CI using Jenkins']
     },
@@ -107,9 +108,9 @@ const baseProfileData = {
       location: 'Bengaluru, India',
       duration: 'November 2015 - February 2017',
       summary: [
-        'Delivered software solutions on Bahmni, an open-source healthcare workflow platform, in a collaborative consulting environment.',
-        'Implemented API automation and performance testing to support product quality and delivery.',
-        'Supported client implementations for Médecins Sans Frontières (MSF), contributing to mission-critical workflows.'
+        'Delivered software for Bahmni, an open-source healthcare workflow platform, working across product, engineering, and implementation teams.',
+        'Built API automation and performance testing capabilities that strengthened release quality and system feedback loops.',
+        'Supported implementations for Médecins Sans Frontières (MSF), contributing to reliable workflows in mission-critical healthcare settings.'
       ],
       techStack: ['Selenium', 'Ruby (Test Automation)', 'Capybara', 'Gatling']
     },
@@ -119,9 +120,9 @@ const baseProfileData = {
       location: 'Bengaluru, India',
       duration: 'November 2013 - October 2015',
       summary: [
-        'Contributed to a big data initiative to build a credit risk rating system with a focus on data quality and pipeline reliability.',
-        'Analyzed source data and validated ETL mappings against business and technical documentation.',
-        'Developed Python tools and scripts to generate reliable ETL test data and streamline data preparation workflows.'
+        'Contributed to a big data credit risk platform, improving confidence in data quality and pipeline reliability.',
+        'Analyzed source data and validated ETL mappings against business and technical requirements.',
+        'Developed Python tooling to generate reliable ETL test data and streamline data preparation workflows.'
       ],
       techStack: ['Python', 'Hadoop', 'Hive', 'HBase', 'Pig']
     }
