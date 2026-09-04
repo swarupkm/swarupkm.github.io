@@ -54,7 +54,7 @@ const baseProfileData = {
       items: ['Prompt Engineering', 'RAG', 'Vector Databases', 'Spec Driven Development']
     }
   ],
-  summary: 'Engineering leader with nearly 13 years of experience shaping technical strategy, designing resilient distributed systems, and delivering cloud-native platforms across fintech, healthcare, and enterprise software. Proven ability to turn ambiguous business and product problems into production-ready systems, drive architecture across teams, and build compliance-aware workflows that improve operational resilience and software quality.',
+  summary: 'Staff-level engineering leader with nearly 13 years of experience defining technical strategy, shaping architecture, and delivering resilient distributed systems across fintech, healthcare, edtech, and enterprise software. Leads ambiguous initiatives from discovery through production, aligns product and engineering decisions across teams, and builds cloud-native platforms that improve operational resilience, delivery velocity, and software quality.',
   experiences: [
     {
       title: 'Lead Software Engineer',
@@ -63,15 +63,57 @@ const baseProfileData = {
       location: 'Bengaluru, India',
       duration: 'June 2022 - Present',
       summary: [
-        'Led technical direction across multiple client engagements, guiding teams of 3-6 engineers from problem framing through production delivery in complex, high-ambiguity environments.',
-        'Partnered with product and business stakeholders to shape architecture, prioritize initiatives, and align engineering execution with business outcomes.',
-        'Designed AI-assisted workflows for identifying PII and parsing participant consent responses across clinical study data, supporting compliance-aware research operations at scale.',
-        'Built data preprocessing and prompt-based decision-tree pipelines to classify consent and sensitive information across ~10 clinical studies per year with ~10,000 participants per study, achieving ~80% parsing accuracy and reducing manual review effort by ~90%.',
-        'Architected study metadata analysis using LLMs and retrieval-augmented generation to enable concept search across distributed research data workflows.',
-        'Drove the design and delivery of a serverless REST API platform and AWS foundation that enabled a trading platform launch in a fast-moving product environment.',
-        'Modernized CI/CD and release engineering, reducing deployment timelines from hours to minutes and improving confidence in frequent, reliable releases.',
-        'Established distributed tracing, CloudWatch monitoring, and operational practices that improved visibility into service health and strengthened cloud-native reliability.',
-        'Mentored engineers and coached teams on system design, Domain-Driven Design, clean architecture, and delivery best practices that improved engineering quality and velocity.'
+        'Set technical direction across multiple client engagements, guiding teams of 3-6 engineers from problem framing and architectural discovery through production delivery.',
+        'Influenced product and business stakeholders on technical strategy, architecture trade-offs, sequencing, and investment decisions in complex, high-ambiguity environments.',
+        'Established shared engineering practices for observability, distributed tracing, cloud-native reliability, Domain-Driven Design, clean architecture, and delivery quality.',
+        'Mentored engineers and raised team capability through system design reviews, architectural guidance, and hands-on coaching across client programs.'
+      ],
+      projects: [
+        {
+          name: 'Clinical Research Data Platform',
+          client: 'Confidential healthcare client',
+          duration: 'October 2025 - Present',
+          techStack: ['Python', 'AWS S3', 'AWS Lambda', 'AWS DynamoDB', 'AWS Step Functions', 'AWS Glue', 'Claude Sonnet 4.6'],
+          summary: [
+            'Led a team of seven engineers and owned the technical strategy, architecture, and delivery roadmap for a clinical research data platform.',
+            'Defined ingestion and preprocessing architecture to transform raw clinical study data from multiple sources into a standardized schema in an AWS data lake.',
+            'Generated data-mapping specifications with Claude Sonnet 4.6 and built Python and AWS workflows using S3, Lambda, DynamoDB, Step Functions, and Glue to support allergy-study analysis across ~10 studies per year and ~10,000 participants per study.',
+            'Achieved ~80% parsing accuracy and reduced manual review effort by ~90% through automated classification of consent and sensitive information.'
+          ]
+        },
+        {
+          name: 'Learning Management Platform',
+          client: 'Confidential Australia-based edtech client',
+          duration: 'March 2025 - July 2025',
+          techStack: ['TypeScript', 'NestJS', 'Next.js', 'Postgres', 'AWS', 'Terraform', 'Sanity CMS'],
+          summary: [
+            'Led discovery, architectural definition, and end-to-end product delivery from inception for a custom learning management platform supporting personalized learning pathways.',
+            'Set technical direction and coordinated a team of three engineers across frontend, backend, and infrastructure delivery.',
+            'Built the backend with NestJS and Postgres, the frontend with Next.js, and provisioned AWS services with Terraform while using Sanity CMS for course content management.'
+          ]
+        },
+        {
+          name: 'Ethical Investment Platform',
+          client: 'Confidential Australia-based fintech client',
+          duration: 'December 2023 - October 2024',
+          techStack: ['Node.js', 'DynamoDB', 'MongoDB', 'AWS Lambda', 'S3', 'API Gateway', 'SNS', 'SQS', 'Serverless'],
+          summary: [
+            'Owned product and technical delivery from inception through beta launch for an ethical investing and shareholder advocacy platform.',
+            'Defined the architecture for a serverless trading platform using AWS Lambda, S3, API Gateway, SNS, SQS, DynamoDB, and MongoDB to support campaign pledges and progress tracking.',
+            'Directed vendor communication and integrations across KYC, trading, and fund management platforms, applying Domain-Driven Design to establish scalable bounded contexts and service boundaries.'
+          ]
+        },
+        {
+          name: 'Education Platform Modernization',
+          client: 'Confidential Australia-based edtech client',
+          duration: 'July 2022 - November 2023',
+          techStack: ['Node.js', 'Postgres', 'REST APIs', 'CI/CD', 'Trunk-Based Development', 'DDD'],
+          summary: [
+            'Maintained and upgraded public-facing APIs by introducing RESTful patterns and practices across legacy services.',
+            'Drove adoption of Clean Architecture in selected legacy projects and redesigned the CI and deployment process, reducing deployment time from hours to minutes through Trunk-Based Development.',
+            'Managed a team of five engineers and established a stronger engineering practice through Domain-Driven Design, architectural principles, and structured technical coaching.'
+          ]
+        }
       ],
       techStack: ['Python', 'TypeScript', 'NodeJS', 'Postgres', 'DynamoDB', 'Serverless', 'Docker', 'React', 'AWS', 'DDD']
     },
@@ -268,6 +310,49 @@ function renderExperiences(experiences) {
       summaryNode.appendChild(liNode);
     });
     node.appendChild(summaryNode);
+
+    if (exp.projects) {
+      const projectsHeadingNode = document.createElement('h4');
+      projectsHeadingNode.className = 'projects-heading';
+      projectsHeadingNode.textContent = 'Projects';
+      node.appendChild(projectsHeadingNode);
+
+      const projectsNode = document.createElement('div');
+      projectsNode.className = 'projects';
+      exp.projects.forEach((project) => {
+        const projectNode = document.createElement('section');
+        projectNode.className = 'project';
+
+        const projectTitleNode = document.createElement('h4');
+        projectTitleNode.className = 'project-title';
+        projectTitleNode.textContent = `${project.name} | ${project.client}`;
+        projectNode.appendChild(projectTitleNode);
+
+        const projectDurationNode = document.createElement('i');
+        projectDurationNode.textContent = project.duration;
+        projectNode.appendChild(projectDurationNode);
+
+        const projectSummaryNode = document.createElement('ul');
+        project.summary.forEach((item) => {
+          const liNode = document.createElement('li');
+          liNode.textContent = item;
+          projectSummaryNode.appendChild(liNode);
+        });
+        projectNode.appendChild(projectSummaryNode);
+
+        const projectTechNode = document.createElement('div');
+        projectTechNode.className = 'tech-stack project-tech-stack';
+        project.techStack.forEach((tech) => {
+          const pill = document.createElement('span');
+          pill.className = 'tech-pill';
+          pill.textContent = tech;
+          projectTechNode.appendChild(pill);
+        });
+        projectNode.appendChild(projectTechNode);
+        projectsNode.appendChild(projectNode);
+      });
+      node.appendChild(projectsNode);
+    }
 
     const techStackNode = document.createElement('div');
     techStackNode.className = 'tech-stack';

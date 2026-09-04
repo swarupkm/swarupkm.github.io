@@ -229,6 +229,46 @@ h3 {
   font-size: 9px;
 }
 
+.projects-heading {
+  margin: 4px 0 2px;
+  font-size: 9px;
+  letter-spacing: 0.03em;
+}
+
+.projects {
+  gap: 3px;
+}
+
+.project {
+  padding-left: 6px;
+  border-left-width: 1.5px;
+}
+
+.project-title {
+  margin-bottom: 1px;
+  font-size: 9px;
+}
+
+.project i {
+  margin-bottom: 1px;
+  font-size: 8.5px;
+}
+
+.project ul {
+  margin: 1px 0 2px;
+  padding-left: 10px;
+}
+
+.project li {
+  margin-bottom: 1px;
+  font-size: 8.5px;
+  line-height: 1.12;
+}
+
+.project .tech-pill {
+  font-size: 7.5px;
+}
+
 .experience .tech-stack {
   margin-top: 4px;
   gap: 3px;

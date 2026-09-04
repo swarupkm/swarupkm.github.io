@@ -326,6 +326,57 @@ h3 {
   font-size: 13.5px;
 }
 
+.projects-heading {
+  margin: 10px 0 5px;
+  color: var(--color-primary);
+  font-family: "Lato", Arial, sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.projects {
+  display: grid;
+  gap: 8px;
+}
+
+.project {
+  padding-left: 10px;
+  border-left: 2px solid #b8d2eb;
+}
+
+.project-title {
+  margin: 0 0 2px;
+  color: var(--color-primary);
+  font-family: "Lato", Arial, sans-serif;
+  font-size: 12.5px;
+  font-weight: 700;
+}
+
+.project i {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--color-muted);
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.project ul {
+  margin: 3px 0 5px;
+  padding-left: 16px;
+}
+
+.project li {
+  margin-bottom: 3px;
+  font-size: 12.5px;
+  line-height: 1.35;
+}
+
+.project-tech-stack {
+  margin-top: 4px !important;
+}
+
 li::marker {
   color: var(--color-accent);
 }
