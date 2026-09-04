@@ -123,7 +123,7 @@ const baseProfileData = {
     {
       title: 'Data Specialist',
       company: 'IBM',
-      logo: 'https://www.google.com/s2/favicons?domain=ibm.com&sz=128',
+      logo: 'https://media.licdn.com/dms/image/v2/D560BAQGiz5ecgpCtkA/company-logo_200_200/company-logo_200_200/0/1688684715866/ibm_logo?e=2147483647&v=beta&t=yWxQj1oew7nR92bDw8r80j2EiCwx29aNxLZktJYrsWw',
       location: 'Bengaluru, India',
       duration: 'November 2013 - October 2015',
       summary: [
