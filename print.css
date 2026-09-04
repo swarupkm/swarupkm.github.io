@@ -197,6 +197,22 @@ h3 {
   box-shadow: none;
 }
 
+.experience-heading {
+  gap: 6px;
+}
+
+.company-logo {
+  width: 22px;
+  height: 22px;
+  flex-basis: 22px;
+  padding: 2px;
+  border-radius: 3px;
+}
+
+.experience-heading > a {
+  flex-basis: 22px;
+}
+
 .experience i {
   font-size: 9px;
   margin-bottom: 2px;

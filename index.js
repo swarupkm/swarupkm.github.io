@@ -59,6 +59,7 @@ const baseProfileData = {
     {
       title: 'Lead Software Engineer',
       company: 'Everest Engineering',
+      logo: 'https://www.google.com/s2/favicons?domain=everest.engineering&sz=128',
       location: 'Bengaluru, India',
       duration: 'June 2022 - Present',
       summary: [
@@ -77,6 +78,8 @@ const baseProfileData = {
     {
       title: 'Senior Software Engineer',
       company: 'SOCASH PTE LTD (acquired by Nium)',
+      logo: 'https://media.licdn.com/dms/image/v2/C510BAQFGuyC-6U8bhg/company-logo_200_200/company-logo_200_200/0/1630621081343/socash_pte_ltd_logo?e=2147483647&v=beta&t=cAmLoQn2NQGc8mvmMhXwTFgmYJAFGJQ5ZzvjwXfhsuQ',
+      companyUrl: 'https://sg.linkedin.com/company/socash',
       location: 'Bengaluru, India',
       duration: 'November 2018 - May 2022',
       summary: [
@@ -91,11 +94,13 @@ const baseProfileData = {
     },
     {
       title: 'Software Engineer',
-      company: 'Aconex (acquired by Oracle)',
+      company: 'Oracle',
+      logo: 'https://www.google.com/s2/favicons?domain=oracle.com&sz=128',
       location: 'Bengaluru, India',
       duration: 'March 2017 - October 2018',
       summary: [
-        'Designed and delivered backend capabilities for document review workflows, with direct ownership of customer-facing service behavior.',
+        'Continued working on the Aconex product within Oracle for several months following the acquisition, supporting a smooth product and engineering transition.',
+        'Designed and delivered backend capabilities for document review workflows of Aconex product, with direct ownership of customer-facing service behavior.',
         'Operated and deployed distributed microservices across regions, prioritizing availability, resilience, and predictable releases.',
         'Built REST APIs for real-time PDF review collaboration and document annotation workflows.',
         'Established automated UI testing infrastructure that improved regression coverage for core review features.'
@@ -105,6 +110,7 @@ const baseProfileData = {
     {
       title: 'Software Consultant',
       company: 'Thoughtworks',
+      logo: 'https://www.google.com/s2/favicons?domain=thoughtworks.com&sz=128',
       location: 'Bengaluru, India',
       duration: 'November 2015 - February 2017',
       summary: [
@@ -117,6 +123,7 @@ const baseProfileData = {
     {
       title: 'Data Specialist',
       company: 'IBM',
+      logo: 'https://www.google.com/s2/favicons?domain=ibm.com&sz=128',
       location: 'Bengaluru, India',
       duration: 'November 2013 - October 2015',
       summary: [
@@ -218,14 +225,41 @@ function renderExperiences(experiences) {
     const node = document.createElement('div');
     node.setAttribute('class', 'experience');
 
+    const headingNode = document.createElement('div');
+    headingNode.className = 'experience-heading';
+
+    if (exp.logo) {
+      const logoNode = document.createElement('img');
+      logoNode.className = 'company-logo';
+      logoNode.src = exp.logo;
+      logoNode.alt = `${exp.company} logo`;
+      logoNode.addEventListener('error', () => logoNode.remove());
+
+      if (exp.companyUrl) {
+        const logoLinkNode = document.createElement('a');
+        logoLinkNode.href = exp.companyUrl;
+        logoLinkNode.target = '_blank';
+        logoLinkNode.rel = 'noopener noreferrer';
+        logoLinkNode.setAttribute('aria-label', `View ${exp.company} company page`);
+        logoLinkNode.appendChild(logoNode);
+        headingNode.appendChild(logoLinkNode);
+      } else {
+        headingNode.appendChild(logoNode);
+      }
+    }
+
+    const headingTextNode = document.createElement('div');
+
     const titleNode = document.createElement('h3');
     titleNode.setAttribute('class', 'title heading-color');
     titleNode.textContent = exp.title;
-    node.appendChild(titleNode);
+    headingTextNode.appendChild(titleNode);
 
     const companyNode = document.createElement('i');
     companyNode.textContent = `${exp.company}, ${exp.location} | ${exp.duration}`;
-    node.appendChild(companyNode);
+    headingTextNode.appendChild(companyNode);
+    headingNode.appendChild(headingTextNode);
+    node.appendChild(headingNode);
 
     const summaryNode = document.createElement('ul');
     exp.summary.forEach((item) => {

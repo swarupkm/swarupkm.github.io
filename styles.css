@@ -273,6 +273,34 @@ h3 {
   box-shadow: 0 4px 14px rgba(77, 143, 214, 0.14);
 }
 
+.experience-heading {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.company-logo {
+  width: 34px;
+  height: 34px;
+  flex: 0 0 34px;
+  object-fit: contain;
+  padding: 4px;
+  border: 1px solid var(--color-border);
+  border-radius: 5px;
+  background: #ffffff;
+}
+
+.experience-heading > a {
+  display: block;
+  flex: 0 0 34px;
+  line-height: 0;
+}
+
+.experience-heading > div {
+  min-width: 0;
+  flex: 1;
+}
+
 .experience .title {
   margin: 0 0 3px;
   font-size: 14.5px;
