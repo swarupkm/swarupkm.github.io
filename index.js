@@ -356,6 +356,12 @@ function renderExperiences(experiences) {
 
     const techStackNode = document.createElement('div');
     techStackNode.className = 'tech-stack';
+    if (exp.projects) {
+      const techStackLabelNode = document.createElement('span');
+      techStackLabelNode.className = 'tech-stack-label';
+      techStackLabelNode.textContent = 'Also used across engagements:';
+      techStackNode.appendChild(techStackLabelNode);
+    }
     exp.techStack.forEach((tech) => {
       const pill = document.createElement('span');
       pill.className = 'tech-pill';
