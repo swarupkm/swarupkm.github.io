@@ -54,7 +54,7 @@ const baseProfileData = {
       items: ['Prompt Engineering', 'RAG', 'Vector Databases', 'Spec Driven Development']
     }
   ],
-  summary: 'Staff-level engineering leader with nearly 13 years of experience defining technical strategy, shaping architecture, and delivering resilient distributed systems across fintech, healthcare, edtech, and enterprise software. Leads ambiguous initiatives from discovery through production, aligns product and engineering decisions across teams, and builds cloud-native platforms that improve operational resilience, delivery velocity, and software quality.',
+  summary: 'Engineering leader with nearly 13 years of experience defining technical strategy, shaping architecture, and delivering resilient distributed systems across fintech, healthcare, edtech, and enterprise software. Leads ambiguous initiatives from discovery through production, aligns product and engineering decisions across teams, and builds cloud-native platforms that improve operational resilience, delivery velocity, and software quality.',
   experiences: [
     {
       title: 'Lead Software Engineer',
