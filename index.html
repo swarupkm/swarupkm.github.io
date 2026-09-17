@@ -7,9 +7,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="styles.css"/>
     <link rel="stylesheet" media="print" href="print.css"/>
+    <script src="https://unpkg.com/docx@9.5.1/dist/index.umd.cjs"></script>
     <script src="index.js" defer></script>
   </head>
   <body>
+    <div class="document-actions" aria-label="Resume actions">
+      <button class="docx-download" type="button" title="Download resume as a Word document">
+        <i class="fa fa-file-word-o" aria-hidden="true"></i>
+        <span>Download DOCX</span>
+      </button>
+    </div>
     <!-- Plain-text ATS header: no background, no FA icons, no border.
          Sits before the styled container so it is always first in the PDF
          text stream, regardless of Chrome's compositing order. -->

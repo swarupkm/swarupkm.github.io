@@ -438,9 +438,149 @@ function renderResumeData(data) {
   renderExperiences(data.experiences);
 }
 
+function createDocxParagraph(text, options = {}, runOptions = {}) {
+  const { Paragraph, TextRun } = docx;
+  return new Paragraph({
+    ...options,
+    children: [new TextRun({
+      text,
+      font: 'Calibri',
+      size: 20,
+      color: '333333',
+      ...runOptions
+    })]
+  });
+}
+
+function createDocxBullet(text) {
+  return createDocxParagraph(text, {
+    style: 'ListParagraph',
+    bullet: { level: 0 },
+    spacing: { after: 60, line: 240 }
+  }, { size: 21 });
+}
+
+function buildResumeDocx(data) {
+  const { AlignmentType, BorderStyle, Document, HeadingLevel, Packer } = docx;
+  const sectionHeadingOptions = {
+    heading: HeadingLevel.HEADING_1,
+    border: {
+      bottom: { color: '1F3864', space: 4, style: BorderStyle.SINGLE, size: 6 }
+    },
+    spacing: { before: 280, after: 120 }
+  };
+  const children = [
+    createDocxParagraph(data.name, {
+      heading: HeadingLevel.TITLE,
+      alignment: AlignmentType.CENTER,
+      spacing: { after: 80 }
+    }, { bold: true, size: 40, color: '1F3864' }),
+    createDocxParagraph(data.role, {
+      alignment: AlignmentType.CENTER,
+      spacing: { after: 80 }
+    }, { bold: true, size: 24, color: '333333' }),
+    createDocxParagraph([
+      data.contact.location,
+      data.contact.email,
+      data.contact.phone
+    ].join(' | '), {
+      alignment: AlignmentType.CENTER,
+      spacing: { after: 40 }
+    }, { size: 19, color: '555555' }),
+    createDocxParagraph([
+      ...data.contact.links.map((link) => `${link.label}: ${link.url}`)
+    ].join(' | '), {
+      alignment: AlignmentType.CENTER,
+      spacing: { after: 160 }
+    }, { size: 19, color: '555555' }),
+    createDocxParagraph('SUMMARY', sectionHeadingOptions, { bold: true, size: 22, color: '1F3864' }),
+    createDocxParagraph(data.summary, { spacing: { after: 160, line: 240 } }, { size: 19, color: '555555' }),
+    createDocxParagraph('PROFESSIONAL EXPERIENCE', sectionHeadingOptions, { bold: true, size: 22, color: '1F3864' })
+  ];
+
+  data.experiences.forEach((experience) => {
+    children.push(
+      createDocxParagraph(experience.title, { spacing: { after: 20, before: 200 } }, {
+        bold: true,
+        size: 22,
+        color: '1F3864'
+      }),
+      createDocxParagraph(`${experience.company}, ${experience.location} | ${experience.duration}`, {
+        spacing: { after: 100 }
+      }, { bold: true, size: 20 }),
+      ...experience.summary.map(createDocxBullet)
+    );
+
+    if (experience.projects) {
+      children.push(createDocxParagraph('PROJECTS', {
+        spacing: { before: 180, after: 80 }
+      }, { bold: true, size: 21, color: '1F3864' }));
+      experience.projects.forEach((project) => {
+        children.push(
+          createDocxParagraph(`Project: ${project.name} | ${project.client}`, {
+            spacing: { before: 120, after: 20 }
+          }, { bold: true, size: 20, color: '1F3864' }),
+          createDocxParagraph(project.duration, { spacing: { after: 80 } }, { size: 20, color: '555555' }),
+          ...project.summary.map(createDocxBullet),
+          createDocxParagraph(`Technologies: ${project.techStack.join(', ')}`, { spacing: { after: 120 } }, {
+            size: 19,
+            color: '555555'
+          })
+        );
+      });
+    }
+
+    children.push(createDocxParagraph(`Technologies: ${experience.techStack.join(', ')}`, {
+      spacing: { before: 40, after: 160 }
+    }, { size: 19, color: '555555' }));
+  });
+
+  children.push(
+    createDocxParagraph('KEY SKILLS', sectionHeadingOptions, { bold: true, size: 22, color: '1F3864' }),
+    ...data.skills.map((skill) => createDocxParagraph(`${skill.category}: ${skill.items.join(', ')}`, {
+      spacing: { after: 80, line: 240 }
+    }, { size: 20 })),
+    createDocxParagraph('EDUCATION', sectionHeadingOptions, { bold: true, size: 22, color: '1F3864' }),
+    createDocxParagraph(data.education.degree, { spacing: { after: 40 } }, { bold: true, size: 20, color: '333333' }),
+    createDocxParagraph(`${data.education.institute} | ${data.education.duration}`, {}, { size: 19, color: '555555' }),
+    createDocxParagraph(`CGPA: ${data.education.cgpa}`, {}, { size: 19, color: '555555' })
+  );
+
+  const document = new Document({
+    sections: [{
+      properties: {
+        page: {
+          margin: { top: 720, right: 900, bottom: 720, left: 900 },
+          size: { width: 12240, height: 15840 }
+        }
+      },
+      children
+    }]
+  });
+  return Packer.toBlob(document);
+}
+
+function downloadResumeDocx() {
+  if (!window.docx) return;
+
+  buildResumeDocx(currentResumeData).then((blob) => {
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = `${currentResumeData.name.replace(/\s+/g, '_')}_Resume.docx`;
+    document.body.appendChild(link);
+    link.click();
+    setTimeout(() => {
+      link.remove();
+      URL.revokeObjectURL(url);
+    }, 1000);
+  });
+}
+
 function loadProfileData() {
   currentResumeData = JSON.parse(JSON.stringify(baseProfileData));
   renderResumeData(currentResumeData);
+  document.querySelector('.docx-download').addEventListener('click', downloadResumeDocx);
 }
 
 window.addEventListener('DOMContentLoaded', loadProfileData);
