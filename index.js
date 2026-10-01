@@ -26,35 +26,35 @@ const baseProfileData = {
   },
   skills: [
     {
-      category: 'Languages',
-      items: ['Java', 'JavaScript', 'Ruby', 'Python']
+      category: 'Architecture & Leadership',
+      items: ['DDD', 'System Design', 'Distributed Systems', 'Clean Architecture', 'TDD', 'OOP', 'Functional Programming', 'Agile', 'Scrum']
     },
     {
-      category: 'Databases',
-      items: ['Postgres', 'DynamoDB']
+      category: 'AI Tools',
+      items: ['Prompt Engineering', 'RAG', 'Vector Databases', 'Spec Driven Development']
+    },
+    {
+      category: 'Languages',
+      items: ['Java', 'JavaScript', 'Ruby', 'Python']
     },
     {
       category: 'Cloud Technologies',
       items: ['Amazon Web Services']
     },
     {
-      category: 'CI/CD',
-      items: ['Jenkins', 'GitHub Actions', 'GitLab', 'Git']
+      category: 'Databases',
+      items: ['Postgres', 'DynamoDB']
     },
     {
       category: 'Infrastructure',
       items: ['Terraform', 'AWS CDK', 'Ansible', 'Docker']
     },
     {
-      category: 'Practices',
-      items: ['DDD', 'TDD', 'OOP', 'Functional Programming', 'System Design', 'Distributed Systems', 'Agile', 'Scrum']
-    },
-    {
-      category: 'AI Tools',
-      items: ['Prompt Engineering', 'RAG', 'Vector Databases', 'Spec Driven Development']
+      category: 'CI/CD',
+      items: ['Jenkins', 'GitHub Actions', 'GitLab', 'Git']
     }
   ],
-  summary: 'Engineering leader with nearly 13 years of experience defining technical strategy, shaping architecture, and delivering resilient distributed systems across fintech, healthcare, edtech, and enterprise software. Leads ambiguous initiatives from discovery through production, aligns product and engineering decisions across teams, and builds cloud-native platforms that improve operational resilience, delivery velocity, and software quality.',
+  summary: 'Engineering leader with 13+ years scaling distributed systems across fintech, healthcare, edtech, and enterprise software, specializing in cloud architecture, platform modernization, and technical strategy. Leads ambiguous initiatives end-to-end, mentoring 6-10 engineers and applying AI/LLM tooling.',
   experiences: [
     {
       title: 'Lead Software Engineer',
@@ -63,22 +63,23 @@ const baseProfileData = {
       location: 'Bengaluru, India',
       duration: 'June 2022 - Present',
       summary: [
-        'Set technical direction across multiple client engagements, guiding teams of 3-6 engineers from problem framing and architectural discovery through production delivery.',
+        'Set technical direction across four client engagements, guiding teams ranging from two to seven engineers from problem framing and architectural discovery through production delivery.',
         'Influenced product and business stakeholders on technical strategy, architecture trade-offs, sequencing, and investment decisions in complex, high-ambiguity environments.',
         'Established shared engineering practices for observability, distributed tracing, cloud-native reliability, Domain-Driven Design, clean architecture, and delivery quality.',
-        'Mentored engineers and raised team capability through system design reviews, architectural guidance, and hands-on coaching across client programs.'
+        'Mentored 6-10 engineers and raised team capability through system design reviews, architectural guidance, and hands-on coaching across client programs.'
       ],
       projects: [
         {
           name: 'Clinical Research Data Platform',
           client: 'Confidential healthcare client',
           duration: 'October 2025 - Present',
-          techStack: ['Python', 'AWS S3', 'AWS Lambda', 'AWS DynamoDB', 'AWS Step Functions', 'AWS Glue', 'Claude Sonnet 4.6'],
+          techStack: ['Python', 'AWS S3', 'AWS Lambda', 'AWS DynamoDB', 'AWS Step Functions', 'AWS Glue', 'Claude Sonnet 4.6', 'Vector Search'],
           summary: [
             'Led a team of seven engineers and owned the technical strategy, architecture, and delivery roadmap for a clinical research data platform.',
             'Defined ingestion and preprocessing architecture to transform raw clinical study data from multiple sources into a standardized schema in an AWS data lake.',
             'Generated data-mapping specifications with Claude Sonnet 4.6 and built Python and AWS workflows using S3, Lambda, DynamoDB, Step Functions, and Glue to support allergy-study analysis across ~10 studies per year and ~10,000 participants per study.',
-            'Achieved ~80% parsing accuracy and reduced manual review effort by ~90% through automated classification of consent and sensitive information.'
+            'Achieved ~80% parsing accuracy and reduced manual review effort by ~90% through automated classification of consent and sensitive information.',
+            'Built a proof-of-concept vector-based semantic search over a clinical concept library of nearly 1 million entries, enabling interactive concept lookup in the platform UI ahead of integrating it into the automated parsing pipeline.'
           ]
         },
         {
@@ -98,7 +99,7 @@ const baseProfileData = {
           duration: 'December 2023 - October 2024',
           techStack: ['Node.js', 'DynamoDB', 'MongoDB', 'AWS Lambda', 'S3', 'API Gateway', 'SNS', 'SQS', 'Serverless'],
           summary: [
-            'Owned product and technical delivery from inception through beta launch for an ethical investing and shareholder advocacy platform.',
+            'Owned product and technical delivery from inception through beta launch for an ethical investing and shareholder advocacy platform, leading a team of 2-3 engineers.',
             'Defined the architecture for a serverless trading platform using AWS Lambda, S3, API Gateway, SNS, SQS, DynamoDB, and MongoDB to support campaign pledges and progress tracking.',
             'Directed vendor communication and integrations across KYC, trading, and fund management platforms, applying Domain-Driven Design to establish scalable bounded contexts and service boundaries.'
           ]
@@ -560,6 +561,13 @@ function buildResumeDocx(data) {
   return Packer.toBlob(document);
 }
 
+function formatDateForFilename(date = new Date()) {
+  const yyyy = date.getFullYear();
+  const mm = String(date.getMonth() + 1).padStart(2, '0');
+  const dd = String(date.getDate()).padStart(2, '0');
+  return `${yyyy}-${mm}-${dd}`;
+}
+
 function downloadResumeDocx() {
   if (!window.docx) return;
 
@@ -567,7 +575,7 @@ function downloadResumeDocx() {
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = url;
-    link.download = `${currentResumeData.name.replace(/\s+/g, '_')}_Resume.docx`;
+    link.download = `${currentResumeData.name.replace(/\s+/g, '_')}_Resume_${formatDateForFilename()}.docx`;
     document.body.appendChild(link);
     link.click();
     setTimeout(() => {
@@ -577,10 +585,20 @@ function downloadResumeDocx() {
   });
 }
 
+function setPrintDocumentTitle() {
+  document.title = `${currentResumeData.name.replace(/\s+/g, '_')}_Resume_${formatDateForFilename()}`;
+}
+
+function restoreDocumentTitle() {
+  document.title = `${currentResumeData.name} | Resume`;
+}
+
 function loadProfileData() {
   currentResumeData = JSON.parse(JSON.stringify(baseProfileData));
   renderResumeData(currentResumeData);
   document.querySelector('.docx-download').addEventListener('click', downloadResumeDocx);
+  window.addEventListener('beforeprint', setPrintDocumentTitle);
+  window.addEventListener('afterprint', restoreDocumentTitle);
 }
 
 window.addEventListener('DOMContentLoaded', loadProfileData);
