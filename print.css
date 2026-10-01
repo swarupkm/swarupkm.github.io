@@ -125,6 +125,8 @@ body {
 
 .left > div:first-child {
   order: 2;
+  break-inside: avoid;
+  page-break-inside: avoid;
 }
 
 .left > .skills {
@@ -199,9 +201,12 @@ h3 {
   border-left-width: 3px;
   border-left-color: var(--color-exp-border);
   box-shadow: none;
+  background: #fff;
+}
+
+.experience:not(:has(.projects)) {
   break-inside: avoid;
   page-break-inside: avoid;
-  background: #fff;
 }
 
 .experience:hover {
