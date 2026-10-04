@@ -54,7 +54,7 @@ const baseProfileData = {
       items: ['Jenkins', 'GitHub Actions', 'GitLab', 'Git']
     }
   ],
-  summary: 'Engineering leader with 13+ years scaling distributed systems across fintech, healthcare, edtech, and enterprise software, specializing in cloud architecture, platform modernization, and technical strategy. Leads ambiguous initiatives end-to-end, mentoring 6-10 engineers and applying AI/LLM tooling.',
+  summary: 'Engineering leader with 13+ years scaling distributed systems across fintech, healthcare, edtech, and enterprise software, specializing in cloud architecture, platform modernization, and technical strategy. Leads ambiguous initiatives end-to-end while mentoring and coaching teams of 6-10 engineers, building technical capability and applying AI/LLM tooling.',
   experiences: [
     {
       title: 'Lead Software Engineer',
@@ -108,10 +108,11 @@ const baseProfileData = {
           name: 'Education Platform Modernization',
           client: 'Confidential Australia-based edtech client',
           duration: 'July 2022 - November 2023',
-          techStack: ['Node.js', 'Postgres', 'REST APIs', 'CI/CD', 'Trunk-Based Development', 'DDD'],
+          techStack: ['Node.js', 'Postgres', 'REST APIs', 'CI/CD', 'Trunk-Based Development', 'Feature Toggles', 'DDD'],
           summary: [
             'Maintained and upgraded public-facing APIs by introducing RESTful patterns and practices across legacy services.',
-            'Drove adoption of Clean Architecture in selected legacy projects and redesigned the CI and deployment process, reducing deployment time from hours to minutes through Trunk-Based Development.',
+            'Drove adoption of Clean Architecture in selected legacy projects to improve maintainability and testability of the codebase.',
+            'Phased out GitFlow for Trunk-Based Development across 50 microservices, introducing feature toggles and decentralized repository ownership, cutting production promotion time from 2 working days to 2 minutes and giving teams full autonomy to deploy independently in place of a shared twice-monthly release cycle.',
             'Managed a team of five engineers and established a stronger engineering practice through Domain-Driven Design, architectural principles, and structured technical coaching.'
           ]
         }
