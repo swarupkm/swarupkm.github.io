@@ -67,9 +67,9 @@ const baseProfileData = {
       location: 'Bengaluru, India',
       duration: 'June 2022 - Present',
       summary: [
-        'Set technical direction across four client engagements, guiding teams ranging from two to seven engineers from problem framing and architectural discovery through production delivery.',
+        'Set technical direction across four client engagements, guiding teams ranging from two to seven engineers from problem framing and architectural discovery through production delivery of cloud-native systems using Python, TypeScript, Node.js, React, AWS, serverless patterns, Docker, Postgres, and DynamoDB.',
         'Influenced product and business stakeholders on technical strategy, architecture trade-offs, sequencing, and investment decisions in complex, high-ambiguity environments.',
-        'Established shared engineering practices for observability, distributed tracing, cloud-native reliability, Domain-Driven Design, clean architecture, and delivery quality.',
+        'Established shared engineering practices for observability, distributed tracing, cloud-native reliability, Domain-Driven Design (DDD), clean architecture, and delivery quality.',
         'Mentored 6-10 engineers and raised team capability through system design reviews, architectural guidance, and hands-on coaching across client programs.'
       ],
       projects: [
@@ -79,18 +79,9 @@ const baseProfileData = {
           summary: [
             'Led a team of seven engineers and owned the technical strategy, architecture, and delivery roadmap for a clinical research data platform.',
             'Defined ingestion and preprocessing architecture to transform raw clinical study data from multiple sources into a standardized schema in an AWS data lake.',
-            'Generated data-mapping specifications with Claude Sonnet 4.6 and built Python and AWS workflows using S3, Lambda, DynamoDB, Step Functions, and Glue to support allergy-study analysis across ~10 studies per year and ~10,000 participants per study.',
+            'Generated data-mapping specifications with Claude Sonnet 4.6 and built Python and AWS workflows using S3, Lambda, DynamoDB, Step Functions, and Glue to support allergy-study analysis across ~10 studies per year, ~10,000 participants per study, and ~1,500 longitudinal survey observations per participant.',
             'Achieved ~80% parsing accuracy and reduced manual review effort by ~90% through automated classification of consent and sensitive information.',
             'Built a proof-of-concept vector-based semantic search over a clinical concept library of nearly 1 million entries, enabling interactive concept lookup in the platform UI ahead of integrating it into the automated parsing pipeline.'
-          ]
-        },
-        {
-          name: 'Learning Management Platform',
-          client: 'Confidential Australia-based edtech client',
-          summary: [
-            'Led discovery, architectural definition, and end-to-end product delivery from inception for a custom learning management platform supporting personalized learning pathways.',
-            'Set technical direction and coordinated a team of three engineers across frontend, backend, and infrastructure delivery.',
-            'Built the backend with NestJS and Postgres, the frontend with Next.js, and provisioned AWS services with Terraform while using Sanity CMS for course content management.'
           ]
         },
         {
@@ -112,8 +103,7 @@ const baseProfileData = {
             'Managed a team of five engineers and established a stronger engineering practice through Domain-Driven Design, architectural principles, and structured technical coaching.'
           ]
         }
-      ],
-      techStack: ['Python', 'TypeScript', 'NodeJS', 'Postgres', 'DynamoDB', 'Serverless', 'Docker', 'React', 'AWS', 'DDD']
+      ]
     },
     {
       title: 'Senior Software Engineer',
@@ -126,11 +116,10 @@ const baseProfileData = {
         'Shaped the architecture and technical roadmap for a fintech payment platform, balancing reliability, throughput, extensibility, and operational resilience in a high-stakes transaction environment.',
         'Led integrations with banks and retail partners, expanding the merchant POS ecosystem through secure, partner-facing APIs across a multi-country payment footprint.',
         'Built and operated a payment gateway integrating 15 banks and vendors, supporting ~10,000 transactions per day for ~500 merchants across 4 countries.',
-        'Re-architected a Node.js monolith into modular Java payment services, establishing clearer service boundaries, ownership models, and a platform-oriented design for long-term scalability.',
+        'Re-architected a Node.js monolith into modular Java payment services on AWS, using Terraform, Postgres, Redis, and RethinkDB and applying Domain-Driven Design (DDD) to establish clearer service boundaries, ownership models, and a platform-oriented design for long-term scalability.',
         'Automated provider failover and configuration management to detect downstream outages and switch payment routes, reducing manual intervention during partner disruptions and improving resilience.',
-        'Built and scaled quality engineering practices with performance testing, monitoring, and observability for critical payment APIs, increasing system stability and operational visibility.'
-      ],
-      techStack: ['Java', 'NodeJS', 'Ruby (Test Automation)', 'AWS', 'Terraform', 'Postgres', 'Redis', 'RethinkDB (NoSQL DB)', 'DDD', 'TDD', 'CI using Jenkins']
+        'Built and scaled quality engineering practices with Ruby-based test automation, Test-Driven Development (TDD), Jenkins CI, performance testing, monitoring, and observability for critical payment APIs, increasing system stability and operational visibility.'
+      ]
     },
     {
       title: 'Software Engineer',
@@ -140,12 +129,11 @@ const baseProfileData = {
       duration: 'March 2017 - October 2018',
       summary: [
         'Continued working on the Aconex product within Oracle for several months following the acquisition, supporting a smooth product and engineering transition.',
-        'Designed and delivered backend capabilities for document review workflows of Aconex product, with direct ownership of customer-facing service behavior.',
-        'Operated and deployed distributed microservices across regions, prioritizing availability, resilience, and predictable releases.',
+        'Designed and delivered Java backend capabilities for Aconex document review workflows, applying Domain-Driven Design (DDD) to shape customer-facing service behavior.',
+        'Operated and deployed distributed microservices across AWS regions using Terraform, Postgres, and MSSQL, prioritizing availability, resilience, and predictable releases.',
         'Built REST APIs for real-time PDF review collaboration and document annotation workflows.',
-        'Established automated UI testing infrastructure that improved regression coverage for core review features.'
-      ],
-      techStack: ['Java', 'Ruby (Test Automation)', 'AWS', 'Terraform', 'Postgres', 'MSSQL', 'DDD', 'TDD', 'CI using Jenkins']
+        'Established automated UI testing infrastructure with Ruby-based test automation, Test-Driven Development (TDD), and Jenkins CI, improving regression coverage for core review features.'
+      ]
     },
     {
       title: 'Software Consultant',
@@ -155,10 +143,9 @@ const baseProfileData = {
       duration: 'November 2015 - February 2017',
       summary: [
         'Delivered software for Bahmni, an open-source healthcare workflow platform, working across product, engineering, and implementation teams.',
-        'Built API automation and performance testing capabilities that strengthened release quality and system feedback loops.',
+        'Built Ruby API test automation and Gatling performance tests, alongside Selenium and Capybara UI automation, strengthening release quality and system feedback loops.',
         'Supported implementations for Médecins Sans Frontières (MSF), contributing to reliable workflows in mission-critical healthcare settings.'
-      ],
-      techStack: ['Selenium', 'Ruby (Test Automation)', 'Capybara', 'Gatling']
+      ]
     },
     {
       title: 'Data Specialist',
@@ -167,11 +154,10 @@ const baseProfileData = {
       location: 'Bengaluru, India',
       duration: 'November 2013 - October 2015',
       summary: [
-        'Contributed to a big data credit risk platform, improving confidence in data quality and pipeline reliability.',
+        'Contributed to a Hadoop-based big data credit risk platform using Hive, HBase, and Pig, improving confidence in data quality and pipeline reliability.',
         'Analyzed source data and validated ETL mappings against business and technical requirements.',
         'Developed Python tooling to generate reliable ETL test data and streamline data preparation workflows.'
-      ],
-      techStack: ['Python', 'Hadoop', 'Hive', 'HBase', 'Pig']
+      ]
     }
   ]
 };
@@ -337,22 +323,6 @@ function renderExperiences(experiences) {
       node.appendChild(projectsNode);
     }
 
-    const techStackNode = document.createElement('div');
-    techStackNode.className = 'tech-stack';
-    if (exp.projects) {
-      const techStackLabelNode = document.createElement('span');
-      techStackLabelNode.className = 'tech-stack-label';
-      techStackLabelNode.textContent = 'Also used across engagements:';
-      techStackNode.appendChild(techStackLabelNode);
-    }
-    exp.techStack.forEach((tech) => {
-      const pill = document.createElement('span');
-      pill.className = 'tech-pill';
-      pill.textContent = tech;
-      techStackNode.appendChild(pill);
-    });
-    node.appendChild(techStackNode);
-
     experiencesNode.appendChild(node);
   });
 }
@@ -505,9 +475,6 @@ function buildResumeDocx(data) {
       });
     }
 
-    children.push(createDocxParagraph(`Technologies: ${experience.techStack.join(', ')}`, {
-      spacing: { before: 40, after: 160 }
-    }, { size: 19, color: '555555' }));
   });
 
   children.push(

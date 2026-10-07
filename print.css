@@ -271,27 +271,6 @@ h3 {
   line-height: 1.12;
 }
 
-.project .tech-pill {
-  font-size: 8pt;
-}
-
-.experience .tech-stack {
-  margin-top: 4px;
-  gap: 3px;
-}
-
-.tech-pill {
-  font-size: 8.5pt;
-  padding: 1px 6px;
-  border-radius: 999px;
-  background: #fff;
-  border-color: #9aa9ba;
-}
-
-.tech-stack-label {
-  font-size: 8.5pt;
-}
-
 .key-skills-list {
   gap: 2px;
 }
