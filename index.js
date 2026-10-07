@@ -58,7 +58,7 @@ const baseProfileData = {
       items: ['Node.js', 'NestJS', 'Next.js', 'React', 'Sanity CMS', 'REST APIs']
     }
   ],
-  summary: 'Engineering leader with 13+ years scaling distributed systems across fintech, healthcare, edtech, and enterprise software, specializing in cloud architecture, platform modernization, and technical strategy. Leads ambiguous initiatives end-to-end while mentoring and coaching teams of 6-10 engineers, building technical capability and applying AI/LLM tooling.',
+  summary: 'Engineering leader with 13+ years designing and modernizing distributed systems across fintech, healthcare, edtech, and enterprise platforms. Drives cloud-native architecture, platform modernization, and technical strategy in complex, regulated environments, translating ambiguity into resilient, scalable systems while improving delivery speed, engineering quality, and operational maturity.',
   experiences: [
     {
       title: 'Lead Software Engineer',
@@ -67,10 +67,10 @@ const baseProfileData = {
       location: 'Bengaluru, India',
       duration: 'June 2022 - Present',
       summary: [
-        'Set technical direction across four client engagements, guiding teams ranging from two to seven engineers from problem framing and architectural discovery through production delivery of cloud-native systems using Python, TypeScript, Node.js, React, AWS, serverless patterns, Docker, Postgres, and DynamoDB.',
-        'Influenced product and business stakeholders on technical strategy, architecture trade-offs, sequencing, and investment decisions in complex, high-ambiguity environments.',
-        'Established shared engineering practices for observability, distributed tracing, cloud-native reliability, Domain-Driven Design (DDD), clean architecture, and delivery quality.',
-        'Mentored 6-10 engineers and raised team capability through system design reviews, architectural guidance, and hands-on coaching across client programs.'
+        'Defined technical direction across multiple client engagements, guiding teams of 2-7 engineers from discovery and architecture through delivery of cloud-native systems using Python, TypeScript, Node.js, React, AWS, serverless patterns, Docker, Postgres, and DynamoDB.',
+        'Partnered with product and business stakeholders to shape technical strategy, prioritize architecture trade-offs, and sequence execution in ambiguous, multi-team environments.',
+        'Established engineering standards for observability, distributed tracing, cloud-native reliability, clean architecture, and Domain-Driven Design (DDD) to improve maintainability, release quality, and platform consistency.',
+        'Mentored 6-10 engineers through design reviews, architecture coaching, and hands-on guidance to strengthen execution quality, technical maturity, and system-level decision making.'
       ],
       projects: [
         {
@@ -114,11 +114,11 @@ const baseProfileData = {
       duration: 'November 2018 - May 2022',
       summary: [
         'Shaped the architecture and technical roadmap for a fintech payment platform, balancing reliability, throughput, extensibility, and operational resilience in a high-stakes transaction environment.',
-        'Led integrations with banks and retail partners, expanding the merchant POS ecosystem through secure, partner-facing APIs across a multi-country payment footprint.',
+        'Led integrations with banks and retail partners to expand the merchant POS ecosystem through secure, partner-facing APIs across a multi-country payments footprint.',
         'Built and operated a payment gateway integrating 15 banks and vendors, supporting ~10,000 transactions per day for ~500 merchants across 4 countries.',
-        'Re-architected a Node.js monolith into modular Java payment services on AWS, using Terraform, Postgres, Redis, and RethinkDB and applying Domain-Driven Design (DDD) to establish clearer service boundaries, ownership models, and a platform-oriented design for long-term scalability.',
+        'Re-architected a Node.js monolith into modular Java payment services on AWS using Terraform, Postgres, Redis, and RethinkDB, applying Domain-Driven Design (DDD) to clarify service boundaries, ownership, and platform scalability.',
         'Automated provider failover and configuration management to detect downstream outages and switch payment routes, reducing manual intervention during partner disruptions and improving resilience.',
-        'Built and scaled quality engineering practices with Ruby-based test automation, Test-Driven Development (TDD), Jenkins CI, performance testing, monitoring, and observability for critical payment APIs, increasing system stability and operational visibility.'
+        'Scaled quality engineering practices with Ruby-based test automation, Test-Driven Development (TDD), Jenkins CI, performance testing, monitoring, and observability for critical payment APIs.'
       ]
     },
     {
@@ -448,7 +448,7 @@ function buildResumeDocx(data) {
     }, { size: 19, color: '555555' }),
     createDocxParagraph('SUMMARY', sectionHeadingOptions, { bold: true, size: 22, color: '1F3864' }),
     createDocxParagraph(data.summary, { spacing: { after: 160, line: 240 } }, { size: 19, color: '555555' }),
-    createDocxParagraph('PROFESSIONAL EXPERIENCE', sectionHeadingOptions, { bold: true, size: 22, color: '1F3864' })
+    createDocxParagraph('WORK EXPERIENCE', sectionHeadingOptions, { bold: true, size: 22, color: '1F3864' })
   ];
 
   data.experiences.forEach((experience) => {
