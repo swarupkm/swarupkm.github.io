@@ -48,10 +48,17 @@ Use the current profile as the baseline and generate a tailored resume variant f
     - meta-platform-engineer.js
     - stripe-finance-engineering.js
     The file name should include a short company code or shorthand and the target role, in lowercase, with hyphen separators.
+14. Generate the candidate-facing tailored output set for each variant:
+    - a matching DOCX export file with the same company-role shorthand and the current date stamp
+    - a matching PDF export file with the same company-role shorthand and the current date stamp
+15. Treat the JS source file as optional internal scaffolding only when needed for reproducibility; the primary deliverables are the DOCX and PDF files that will be shared with recruiters or hiring teams.
+16. Keep generated artifacts in the project root alongside the base resume files so they are easy to find and review.
+17. If a source JS variant is created, it should be consistent with the DOCX/PDF content and use the same company-role shorthand naming.
 
 ## Output
 - A short summary of the tailoring approach
 - The tailored resume content or the relevant data changes
 - Any notable keywords or themes that were emphasized
-- The generated file name for the tailored resume variant, using the company-role shorthand convention
+- The generated DOCX and PDF file names for the tailored resume variant
+- Optional: the generated source JS file name if it was created for reproducibility
 - ATS-specific notes such as exact title matching, section naming, and keyword strategy if relevant
