@@ -245,12 +245,6 @@ h3 {
   font-size: 9.5pt;
 }
 
-.projects-heading {
-  margin: 4px 0 2px;
-  font-size: 9.5pt;
-  letter-spacing: 0.03em;
-}
-
 .projects {
   gap: 3px;
 }
@@ -264,11 +258,6 @@ h3 {
 .project-title {
   margin-bottom: 1px;
   font-size: 9.5pt;
-}
-
-.project i {
-  margin-bottom: 1px;
-  font-size: 9pt;
 }
 
 .project ul {

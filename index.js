@@ -31,27 +31,31 @@ const baseProfileData = {
     },
     {
       category: 'AI Tools',
-      items: ['Prompt Engineering', 'RAG', 'Vector Databases', 'Spec Driven Development']
+      items: ['Prompt Engineering', 'RAG', 'Vector Databases', 'Vector Search', 'Claude Sonnet 4.6', 'Spec Driven Development']
     },
     {
       category: 'Languages',
-      items: ['Java', 'JavaScript', 'Ruby', 'Python']
+      items: ['Java', 'JavaScript', 'TypeScript', 'Ruby', 'Python']
     },
     {
       category: 'Cloud Technologies',
-      items: ['Amazon Web Services']
+      items: ['Amazon Web Services', 'S3', 'Lambda', 'Step Functions', 'Glue', 'API Gateway', 'SNS', 'SQS']
     },
     {
       category: 'Databases',
-      items: ['Postgres', 'DynamoDB']
+      items: ['Postgres', 'DynamoDB', 'MongoDB']
     },
     {
       category: 'Infrastructure',
-      items: ['Terraform', 'AWS CDK', 'Ansible', 'Docker']
+      items: ['Terraform', 'AWS CDK', 'Ansible', 'Docker', 'Serverless']
     },
     {
       category: 'CI/CD',
-      items: ['Jenkins', 'GitHub Actions', 'GitLab', 'Git']
+      items: ['Jenkins', 'GitHub Actions', 'GitLab', 'Git', 'Trunk-Based Development', 'Feature Toggles']
+    },
+    {
+      category: 'Frameworks & Platforms',
+      items: ['Node.js', 'NestJS', 'Next.js', 'React', 'Sanity CMS', 'REST APIs']
     }
   ],
   summary: 'Engineering leader with 13+ years scaling distributed systems across fintech, healthcare, edtech, and enterprise software, specializing in cloud architecture, platform modernization, and technical strategy. Leads ambiguous initiatives end-to-end while mentoring and coaching teams of 6-10 engineers, building technical capability and applying AI/LLM tooling.',
@@ -72,8 +76,6 @@ const baseProfileData = {
         {
           name: 'Clinical Research Data Platform',
           client: 'Confidential healthcare client',
-          duration: 'October 2025 - Present',
-          techStack: ['Python', 'AWS S3', 'AWS Lambda', 'AWS DynamoDB', 'AWS Step Functions', 'AWS Glue', 'Claude Sonnet 4.6', 'Vector Search'],
           summary: [
             'Led a team of seven engineers and owned the technical strategy, architecture, and delivery roadmap for a clinical research data platform.',
             'Defined ingestion and preprocessing architecture to transform raw clinical study data from multiple sources into a standardized schema in an AWS data lake.',
@@ -85,8 +87,6 @@ const baseProfileData = {
         {
           name: 'Learning Management Platform',
           client: 'Confidential Australia-based edtech client',
-          duration: 'March 2025 - July 2025',
-          techStack: ['TypeScript', 'NestJS', 'Next.js', 'Postgres', 'AWS', 'Terraform', 'Sanity CMS'],
           summary: [
             'Led discovery, architectural definition, and end-to-end product delivery from inception for a custom learning management platform supporting personalized learning pathways.',
             'Set technical direction and coordinated a team of three engineers across frontend, backend, and infrastructure delivery.',
@@ -96,8 +96,6 @@ const baseProfileData = {
         {
           name: 'Ethical Investment Platform',
           client: 'Confidential Australia-based fintech client',
-          duration: 'December 2023 - October 2024',
-          techStack: ['Node.js', 'DynamoDB', 'MongoDB', 'AWS Lambda', 'S3', 'API Gateway', 'SNS', 'SQS', 'Serverless'],
           summary: [
             'Owned product and technical delivery from inception through beta launch for an ethical investing and shareholder advocacy platform, leading a team of 2-3 engineers.',
             'Defined the architecture for a serverless trading platform using AWS Lambda, S3, API Gateway, SNS, SQS, DynamoDB, and MongoDB to support campaign pledges and progress tracking.',
@@ -107,8 +105,6 @@ const baseProfileData = {
         {
           name: 'Education Platform Modernization',
           client: 'Confidential Australia-based edtech client',
-          duration: 'July 2022 - November 2023',
-          techStack: ['Node.js', 'Postgres', 'REST APIs', 'CI/CD', 'Trunk-Based Development', 'Feature Toggles', 'DDD'],
           summary: [
             'Maintained and upgraded public-facing APIs by introducing RESTful patterns and practices across legacy services.',
             'Drove adoption of Clean Architecture in selected legacy projects to improve maintainability and testability of the codebase.',
@@ -221,6 +217,8 @@ function renderContact(contact) {
     anchorNode.href = link.url;
     anchorNode.target = '_blank';
     anchorNode.rel = 'noopener noreferrer';
+    anchorNode.setAttribute('aria-label', `${link.label}: ${link.url}`);
+    anchorNode.title = link.label;
 
     const iconNode = document.createElement('i');
     iconNode.className = `fa fa-${link.icon}`;
@@ -228,7 +226,8 @@ function renderContact(contact) {
 
     const labelNode = document.createElement('span');
     labelNode.className = 'social-label';
-    labelNode.textContent = link.label;
+    const socialUrl = new URL(link.url);
+    labelNode.textContent = `${socialUrl.hostname.replace(/^www\./, '')}${socialUrl.pathname.replace(/\/$/, '')}`;
 
     anchorNode.appendChild(iconNode);
     anchorNode.appendChild(labelNode);
@@ -314,11 +313,6 @@ function renderExperiences(experiences) {
     node.appendChild(summaryNode);
 
     if (exp.projects) {
-      const projectsHeadingNode = document.createElement('h4');
-      projectsHeadingNode.className = 'projects-heading';
-      projectsHeadingNode.textContent = 'Projects';
-      node.appendChild(projectsHeadingNode);
-
       const projectsNode = document.createElement('div');
       projectsNode.className = 'projects';
       exp.projects.forEach((project) => {
@@ -327,12 +321,8 @@ function renderExperiences(experiences) {
 
         const projectTitleNode = document.createElement('h4');
         projectTitleNode.className = 'project-title';
-        projectTitleNode.textContent = `${project.name} | ${project.client}`;
+        projectTitleNode.textContent = `Project: ${project.name} | ${project.client}`;
         projectNode.appendChild(projectTitleNode);
-
-        const projectDurationNode = document.createElement('i');
-        projectDurationNode.textContent = project.duration;
-        projectNode.appendChild(projectDurationNode);
 
         const projectSummaryNode = document.createElement('ul');
         project.summary.forEach((item) => {
@@ -342,15 +332,6 @@ function renderExperiences(experiences) {
         });
         projectNode.appendChild(projectSummaryNode);
 
-        const projectTechNode = document.createElement('div');
-        projectTechNode.className = 'tech-stack project-tech-stack';
-        project.techStack.forEach((tech) => {
-          const pill = document.createElement('span');
-          pill.className = 'tech-pill';
-          pill.textContent = tech;
-          projectTechNode.appendChild(pill);
-        });
-        projectNode.appendChild(projectTechNode);
         projectsNode.appendChild(projectNode);
       });
       node.appendChild(projectsNode);
@@ -514,20 +495,12 @@ function buildResumeDocx(data) {
     );
 
     if (experience.projects) {
-      children.push(createDocxParagraph('PROJECTS', {
-        spacing: { before: 180, after: 80 }
-      }, { bold: true, size: 21, color: '1F3864' }));
       experience.projects.forEach((project) => {
         children.push(
           createDocxParagraph(`Project: ${project.name} | ${project.client}`, {
             spacing: { before: 120, after: 20 }
           }, { bold: true, size: 20, color: '1F3864' }),
-          createDocxParagraph(project.duration, { spacing: { after: 80 } }, { size: 20, color: '555555' }),
-          ...project.summary.map(createDocxBullet),
-          createDocxParagraph(`Technologies: ${project.techStack.join(', ')}`, { spacing: { after: 120 } }, {
-            size: 19,
-            color: '555555'
-          })
+          ...project.summary.map(createDocxBullet)
         );
       });
     }
@@ -586,6 +559,10 @@ function downloadResumeDocx() {
   });
 }
 
+function downloadResumePdf() {
+  window.print();
+}
+
 function setPrintDocumentTitle() {
   document.title = `${currentResumeData.name.replace(/\s+/g, '_')}_Resume_${formatDateForFilename()}`;
 }
@@ -598,6 +575,7 @@ function loadProfileData() {
   currentResumeData = JSON.parse(JSON.stringify(baseProfileData));
   renderResumeData(currentResumeData);
   document.querySelector('.docx-download').addEventListener('click', downloadResumeDocx);
+  document.querySelector('.pdf-download').addEventListener('click', downloadResumePdf);
   window.addEventListener('beforeprint', setPrintDocumentTitle);
   window.addEventListener('afterprint', restoreDocumentTitle);
 }

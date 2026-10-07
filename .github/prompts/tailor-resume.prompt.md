@@ -21,7 +21,8 @@ Revise the resume content in the workspace so it better matches the target job d
    - summary statement
    - skill groups
    - experience bullets
-   - technology stack language where appropriate
+   - experience-level technology stack language where appropriate
+   - relevant project technologies in the global skill groups, which render under Key Skills; do not add project timeframes or per-project technology-stack blocks
 4. Keep the wording truthful, senior, and ATS-friendly.
 5. Preserve the existing resume layout and formatting unless the user explicitly asks for a redesign.
 6. Avoid inventing job titles, years of experience, or achievements that are not supported by the current content.
