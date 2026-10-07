@@ -217,17 +217,11 @@ h3 {
   gap: 6px;
 }
 
+.experience-heading > a,
 .company-logo {
-  width: 22px;
-  height: 22px;
-  flex-basis: 22px;
-  padding: 2px;
-  border-radius: 3px;
+  display: none;
 }
 
-.experience-heading > a {
-  flex-basis: 22px;
-}
 
 .experience i {
   font-size: 9.5pt;
