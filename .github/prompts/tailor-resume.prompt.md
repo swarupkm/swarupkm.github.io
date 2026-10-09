@@ -27,7 +27,7 @@ Use the current profile as the baseline and generate a tailored resume variant f
    - experience bullets
    - experience-level technology stack language where appropriate
    - relevant project technologies in the global skill groups, which render under Key Skills; do not add project timeframes or per-project technology-stack blocks
-7. Keep the wording truthful, senior, and ATS-friendly.
+7. Keep the wording truthful, senior, and ATS-friendly. Keep the summary short: 2-3 sentences, no longer than the baseline summary (~60 words).
 8. Preserve the existing resume layout and formatting unless the user explicitly asks for a redesign.
 9. Avoid inventing job titles, years of experience, or achievements that are not supported by the current content.
 10. Favor ATS-safe formatting and parsing rules:
