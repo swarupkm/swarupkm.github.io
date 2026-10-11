@@ -58,7 +58,7 @@ const baseProfileData = {
       items: ['Node.js', 'NestJS', 'Next.js', 'React', 'Sanity CMS', 'REST APIs']
     }
   ],
-  summary: 'Engineering leader with 13+ years designing and modernizing distributed systems across fintech, healthcare, edtech, and enterprise platforms. Drives cloud-native architecture, platform modernization, and technical strategy in complex, regulated environments, translating ambiguity into resilient, scalable systems while improving delivery speed, engineering quality, and operational maturity.',
+  summary: 'Lead Software Engineer with 13+ years building distributed, cloud-native systems across fintech, healthcare, and edtech. Cut production promotion from 2 days to 2 minutes across 50 microservices, built a payment gateway handling ~10,000 daily transactions in 4 countries, and reduced clinical-data manual review by ~90%. Leads teams of up to 7 engineers from architecture through delivery.',
   experiences: [
     {
       title: 'Lead Software Engineer',
@@ -78,9 +78,9 @@ const baseProfileData = {
           client: 'Confidential healthcare client',
           summary: [
             'Led a team of seven engineers and owned the technical strategy, architecture, and delivery roadmap for a clinical research data platform.',
+            'Reduced manual review effort by ~90% and achieved ~80% parsing accuracy by automating classification of consent and sensitive information.',
             'Defined ingestion and preprocessing architecture to transform raw clinical study data from multiple sources into a standardized schema in an AWS data lake.',
             'Generated data-mapping specifications with Claude Sonnet 4.6 and built Python and AWS workflows using S3, Lambda, DynamoDB, Step Functions, and Glue to support allergy-study analysis across ~10 studies per year, ~10,000 participants per study, and ~1,500 longitudinal survey observations per participant.',
-            'Achieved ~80% parsing accuracy and reduced manual review effort by ~90% through automated classification of consent and sensitive information.',
             'Built a proof-of-concept vector-based semantic search over a clinical concept library of nearly 1 million entries, enabling interactive concept lookup in the platform UI ahead of integrating it into the automated parsing pipeline.'
           ]
         },
@@ -97,10 +97,10 @@ const baseProfileData = {
           name: 'Education Platform Modernization',
           client: 'Confidential Australia-based edtech client',
           summary: [
-            'Maintained and upgraded public-facing APIs by introducing RESTful patterns and practices across legacy services.',
+            'Cut production promotion time from 2 working days to 2 minutes by replacing GitFlow with Trunk-Based Development across 50 microservices, introducing feature toggles and decentralized repository ownership so teams deploy independently instead of waiting for a shared twice-monthly release cycle.',
+            'Managed a team of five engineers and established a stronger engineering practice through Domain-Driven Design, architectural principles, and structured technical coaching.',
             'Drove adoption of Clean Architecture in selected legacy projects to improve maintainability and testability of the codebase.',
-            'Phased out GitFlow for Trunk-Based Development across 50 microservices, introducing feature toggles and decentralized repository ownership, cutting production promotion time from 2 working days to 2 minutes and giving teams full autonomy to deploy independently in place of a shared twice-monthly release cycle.',
-            'Managed a team of five engineers and established a stronger engineering practice through Domain-Driven Design, architectural principles, and structured technical coaching.'
+            'Maintained and upgraded public-facing APIs by introducing RESTful patterns and practices across legacy services.'
           ]
         }
       ]
@@ -113,11 +113,11 @@ const baseProfileData = {
       location: 'Bengaluru, India',
       duration: 'November 2018 - May 2022',
       summary: [
-        'Shaped the architecture and technical roadmap for a fintech payment platform, balancing reliability, throughput, extensibility, and operational resilience in a high-stakes transaction environment.',
-        'Led integrations with banks and retail partners to expand the merchant POS ecosystem through secure, partner-facing APIs across a multi-country payments footprint.',
         'Built and operated a payment gateway integrating 15 banks and vendors, supporting ~10,000 transactions per day for ~500 merchants across 4 countries.',
         'Re-architected a Node.js monolith into modular Java payment services on AWS using Terraform, Postgres, Redis, and RethinkDB, applying Domain-Driven Design (DDD) to clarify service boundaries, ownership, and platform scalability.',
         'Automated provider failover and configuration management to detect downstream outages and switch payment routes, reducing manual intervention during partner disruptions and improving resilience.',
+        'Led integrations with banks and retail partners to expand the merchant POS ecosystem through secure, partner-facing APIs across a multi-country payments footprint.',
+        'Shaped the architecture and technical roadmap for the payment platform, balancing reliability, throughput, extensibility, and operational resilience in a high-stakes transaction environment.',
         'Scaled quality engineering practices with Ruby-based test automation, Test-Driven Development (TDD), Jenkins CI, performance testing, monitoring, and observability for critical payment APIs.'
       ]
     },
@@ -128,11 +128,11 @@ const baseProfileData = {
       location: 'Bengaluru, India',
       duration: 'March 2017 - October 2018',
       summary: [
-        'Continued working on the Aconex product within Oracle for several months following the acquisition, supporting a smooth product and engineering transition.',
         'Designed and delivered Java backend capabilities for Aconex document review workflows, applying Domain-Driven Design (DDD) to shape customer-facing service behavior.',
         'Operated and deployed distributed microservices across AWS regions using Terraform, Postgres, and MSSQL, prioritizing availability, resilience, and predictable releases.',
         'Built REST APIs for real-time PDF review collaboration and document annotation workflows.',
-        'Established automated UI testing infrastructure with Ruby-based test automation, Test-Driven Development (TDD), and Jenkins CI, improving regression coverage for core review features.'
+        'Established automated UI testing infrastructure with Ruby-based test automation, Test-Driven Development (TDD), and Jenkins CI, improving regression coverage for core review features.',
+        'Continued working on the Aconex product within Oracle for several months following the acquisition, supporting a smooth product and engineering transition.'
       ]
     },
     {

@@ -37,3 +37,9 @@ To export from the page, click **Download PDF** beside **Download DOCX**; this o
 ## Tailoring the resume for a job description
 
 [.github/prompts/tailor-resume.prompt.md](.github/prompts/tailor-resume.prompt.md) documents the intended workflow for adapting content to a specific job posting: extract role-relevant keywords/themes from the JD, then update the summary, skill groups, experience bullets, and tech-stack wording in `baseProfileData` to emphasize them — without inventing titles, years of experience, or achievements, and without changing the overall layout/structure unless explicitly asked.
+
+The prompt ends with a review checklist that applies to any content change in `baseProfileData`, not only tailored variants:
+- **6-second test:** the top third of the page (name, title, summary) shows the current role, years of experience, and strongest wins at a glance.
+- **Impact over responsibilities:** bullets state outcomes ("action + what changed + measurable result"), using only metrics already in the resume or confirmed by the user, and never invented ones.
+- **Tailoring:** the most relevant experience and skills for the target role come first, and bullets that don't help are trimmed.
+- **Consistency:** titles, dates, years of experience, and technology names agree across sections and across the web, DOCX, and PDF outputs.

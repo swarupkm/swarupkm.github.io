@@ -54,6 +54,15 @@ Use the current profile as the baseline and generate a tailored resume variant f
 15. Treat the JS source file as optional internal scaffolding only when needed for reproducibility; the primary deliverables are the DOCX and PDF files that will be shared with recruiters or hiring teams.
 16. Keep generated artifacts in the project root alongside the base resume files so they are easy to find and review.
 17. If a source JS variant is created, it should be consistent with the DOCX/PDF content and use the same company-role shorthand naming.
+18. Before generating the DOCX and PDF exports, run the Review checklist below against the tailored content and fix anything that fails.
+
+## Review checklist
+Review the tailored resume as the hiring manager for the target role would:
+- **6-second test:** the top third of the first page (name, title, summary) must show the current role, total years of experience, and the two or three strongest wins that matter for this posting. If a recruiter stopped reading there, they should already know why the candidate fits.
+- **Impact over responsibilities:** each experience bullet should state an outcome, not a duty. Prefer "action + what changed + measurable result" (scale, latency, cost, revenue, team size, delivery time). Use only numbers and results already supported by `baseProfileData` or confirmed by the user, and never invent metrics. If a bullet has no supported number, state the concrete outcome in words.
+- **Tailored to the posting:** the most relevant experience and skills for this job description come first within each section, and bullets that don't help this application are cut back or removed rather than kept as filler.
+- **Consistency:** job titles, company names, dates, years-of-experience claims, and technology names agree across the summary, experience, skills, DOCX, and PDF, with no conflicting numbers or date formats.
+- **Actionable gaps:** list in the output any requirement in the posting that the resume can't truthfully cover, so the user can decide whether to add supporting detail.
 
 ## Output
 - A short summary of the tailoring approach
@@ -62,3 +71,4 @@ Use the current profile as the baseline and generate a tailored resume variant f
 - The generated DOCX and PDF file names for the tailored resume variant
 - Optional: the generated source JS file name if it was created for reproducibility
 - ATS-specific notes such as exact title matching, section naming, and keyword strategy if relevant
+- Review checklist results: what changed to pass the 6-second test, bullets rewritten for impact, and any requirements from the posting the resume can't truthfully cover
