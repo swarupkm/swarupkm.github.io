@@ -67,40 +67,40 @@ const baseProfileData = {
       location: 'Bengaluru, India',
       duration: 'June 2022 - Present',
       summary: [
-        'Defined technical direction across multiple client engagements, guiding teams of 2-7 engineers from discovery and architecture through delivery of cloud-native systems using Python, TypeScript, Node.js, React, AWS, serverless patterns, Docker, Postgres, and DynamoDB.',
-        'Partnered with product and business stakeholders to shape technical strategy, prioritize architecture trade-offs, and sequence execution in ambiguous, multi-team environments.',
-        'Established engineering standards for observability, distributed tracing, cloud-native reliability, clean architecture, and Domain-Driven Design (DDD) to improve maintainability, release quality, and platform consistency.',
-        'Mentored 6-10 engineers through design reviews, architecture coaching, and hands-on guidance to strengthen execution quality, technical maturity, and system-level decision making.'
+        'Owned end-to-end technical direction for multiple products, leading teams of 2-7 engineers from discovery and architecture through production launch of cloud-native systems using Python, TypeScript, Node.js, React, AWS, serverless patterns, Docker, Postgres, and DynamoDB.',
+        'Worked with Product and business leaders to shape product roadmaps, prioritize trade-offs, and sequence delivery across multiple teams in ambiguous, early-stage environments.',
+        'Set engineering standards for observability, distributed tracing, cloud-native reliability, clean architecture, and Domain-Driven Design (DDD) to improve release quality and keep products maintainable as they scaled after launch.',
+        'Mentored 6-10 engineers through design reviews, architecture coaching, and hands-on guidance to raise execution quality and build product-minded, system-level decision making.'
       ],
       projects: [
         {
           name: 'Clinical Research Data Platform',
-          client: 'Confidential healthcare client',
+          client: 'HealthTech',
           summary: [
-            'Led a team of seven engineers and owned the technical strategy, architecture, and delivery roadmap for a clinical research data platform.',
+            'Led a team of seven engineers and owned the technical strategy, architecture, and delivery roadmap for a clinical research data product supporting allergy-study analysis.',
             'Reduced manual review effort by ~90% and achieved ~80% parsing accuracy by automating classification of consent and sensitive information.',
             'Defined ingestion and preprocessing architecture to transform raw clinical study data from multiple sources into a standardized schema in an AWS data lake.',
             'Generated data-mapping specifications with Claude Sonnet 4.6 and built Python and AWS workflows using S3, Lambda, DynamoDB, Step Functions, and Glue to support allergy-study analysis across ~10 studies per year, ~10,000 participants per study, and ~1,500 longitudinal survey observations per participant.',
-            'Built a proof-of-concept vector-based semantic search over a clinical concept library of nearly 1 million entries, enabling interactive concept lookup in the platform UI ahead of integrating it into the automated parsing pipeline.'
+            'Prototyped vector-based semantic search over a clinical concept library of nearly 1 million entries, enabling interactive concept lookup in the product UI ahead of integrating it into the automated parsing pipeline.'
           ]
         },
         {
           name: 'Ethical Investment Platform',
-          client: 'Confidential Australia-based fintech client',
+          client: 'FinTech, Australia',
           summary: [
-            'Owned product and technical delivery from inception through beta launch for an ethical investing and shareholder advocacy platform, leading a team of 2-3 engineers.',
-            'Defined the architecture for a serverless trading platform using AWS Lambda, S3, API Gateway, SNS, SQS, DynamoDB, and MongoDB to support campaign pledges and progress tracking.',
-            'Directed vendor communication and integrations across KYC, trading, and fund management platforms, applying Domain-Driven Design to establish scalable bounded contexts and service boundaries.'
+            'Owned product and technical delivery from inception through beta launch for an ethical investing and shareholder advocacy product, leading a team of 2-3 engineers.',
+            'Designed a serverless trading platform using AWS Lambda, S3, API Gateway, SNS, SQS, DynamoDB, and MongoDB to power campaign pledges and progress tracking for investors.',
+            'Led third-party integrations across KYC, trading, and fund management providers, applying Domain-Driven Design to define bounded contexts and service boundaries that could scale beyond launch.'
           ]
         },
         {
           name: 'Education Platform Modernization',
-          client: 'Confidential Australia-based edtech client',
+          client: 'EdTech, Australia',
           summary: [
             'Cut production promotion time from 2 working days to 2 minutes by replacing GitFlow with Trunk-Based Development across 50 microservices, introducing feature toggles and decentralized repository ownership so teams deploy independently instead of waiting for a shared twice-monthly release cycle.',
-            'Managed a team of five engineers and established a stronger engineering practice through Domain-Driven Design, architectural principles, and structured technical coaching.',
+            'Led a team of five engineers and established a stronger engineering practice through Domain-Driven Design, architectural principles, and structured technical coaching.',
             'Drove adoption of Clean Architecture in selected legacy projects to improve maintainability and testability of the codebase.',
-            'Maintained and upgraded public-facing APIs by introducing RESTful patterns and practices across legacy services.'
+            'Modernized public-facing APIs by introducing RESTful patterns and practices across legacy services.'
           ]
         }
       ]
