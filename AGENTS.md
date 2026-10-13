@@ -36,10 +36,14 @@ To export from the page, click **Download PDF** beside **Download DOCX**; this o
 
 ## Tailoring the resume for a job description
 
-[.github/prompts/tailor-resume.prompt.md](.github/prompts/tailor-resume.prompt.md) documents the intended workflow for adapting content to a specific job posting: extract role-relevant keywords/themes from the JD, then update the summary, skill groups, experience bullets, and tech-stack wording in `baseProfileData` to emphasize them — without inventing titles, years of experience, or achievements, and without changing the overall layout/structure unless explicitly asked.
+[.github/prompts/tailor-resume.prompt.md](.github/prompts/tailor-resume.prompt.md) documents the intended workflow for adapting content to a specific job posting: parse the JD as an ATS would (every keyword, skill, and requirement, grouped by category and marked must-have or nice-to-have), score the baseline resume's match rate against that term list, and review positioning (identity framing such as builder vs. manager, and moving buried credentials up). Then update the summary, skill groups, experience bullets, and tech-stack wording in `baseProfileData` to emphasize those terms, with bullets mirroring the posting's language — without inventing titles, years of experience, or achievements, and without changing the overall layout/structure unless explicitly asked. Its output includes the keyword extraction, before/after match rate, positioning changes, and keyword-stuffing flags alongside the DOCX/PDF file names.
 
 The prompt ends with a review checklist that applies to any content change in `baseProfileData`, not only tailored variants:
 - **6-second test:** the top third of the page (name, title, summary) shows the current role, years of experience, and strongest wins at a glance.
 - **Impact over responsibilities:** bullets state outcomes ("action + what changed + measurable result"), using only metrics already in the resume or confirmed by the user, and never invented ones.
 - **Tailoring:** the most relevant experience and skills for the target role come first, and bullets that don't help are trimmed.
 - **Consistency:** titles, dates, years of experience, and technology names agree across sections and across the web, DOCX, and PDF outputs.
+
+Tailored variants also get two posting-specific checks:
+- **Match rate:** re-score the tailored resume against the same extracted term list, and confirm every must-have term the experience truthfully supports is present.
+- **Keyword stuffing:** flag phrases where a posting term is forced in (repetition, keyword lists inside sentences, terms that don't fit the bullet), and rewrite them naturally or drop the term.
