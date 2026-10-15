@@ -58,7 +58,7 @@ const baseProfileData = {
       items: ['Node.js', 'NestJS', 'Next.js', 'React', 'Sanity CMS', 'REST APIs']
     }
   ],
-  summary: 'Lead Software Engineer with 13+ years building distributed, cloud-native systems across fintech, healthcare, and edtech. Cut production promotion from 2 days to 2 minutes across 50 microservices, built a payment gateway handling ~10,000 daily transactions in 4 countries, and reduced clinical-data manual review by ~90%. Leads teams of up to 7 engineers from architecture through delivery.',
+  summary: 'Lead Software Engineer with 13+ years of building distributed, cloud-native systems in fintech, healthcare, and edtech. Cut the time to ship to production from 2 days to 2 minutes across 50 microservices, built a payment gateway that handles ~10,000 transactions a day in 4 countries, and reduced manual review of clinical data by ~90%. Leads teams of up to 7 engineers, from the first architecture sketch through to production.',
   experiences: [
     {
       title: 'Lead Software Engineer',
@@ -67,40 +67,40 @@ const baseProfileData = {
       location: 'Bengaluru, India',
       duration: 'June 2022 - Present',
       summary: [
-        'Owned end-to-end technical direction for multiple products, leading teams of 2-7 engineers from discovery and architecture through production launch of cloud-native systems using Python, TypeScript, Node.js, React, AWS, serverless patterns, Docker, Postgres, and DynamoDB.',
-        'Worked with Product and business leaders to shape product roadmaps, prioritize trade-offs, and sequence delivery across multiple teams in ambiguous, early-stage environments.',
-        'Set engineering standards for observability, distributed tracing, cloud-native reliability, clean architecture, and Domain-Driven Design (DDD) to improve release quality and keep products maintainable as they scaled after launch.',
-        'Mentored 6-10 engineers through design reviews, architecture coaching, and hands-on guidance to raise execution quality and build product-minded, system-level decision making.'
+        'Led the technical side of several products from first discovery to production launch, with teams of 2-7 engineers, building cloud-native systems in Python, TypeScript, Node.js, React, AWS, serverless, Docker, Postgres, and DynamoDB.',
+        'Worked closely with product and business leaders to plan roadmaps, decide what to build first, and keep several teams moving in early-stage products where requirements were still taking shape.',
+        'Set up shared engineering practices around observability, distributed tracing, reliability, clean architecture, and Domain-Driven Design (DDD), so releases stayed stable and the code stayed easy to change after launch.',
+        'Mentored 6-10 engineers through design reviews, pairing, and architecture discussions, helping them think about the product and the whole system rather than just their own tickets.'
       ],
       projects: [
         {
           name: 'Clinical Research Data Platform',
           client: 'HealthTech',
           summary: [
-            'Led a team of seven engineers and owned the technical strategy, architecture, and delivery roadmap for a clinical research data product supporting allergy-study analysis.',
-            'Reduced manual review effort by ~90% and achieved ~80% parsing accuracy by automating classification of consent and sensitive information.',
-            'Defined ingestion and preprocessing architecture to transform raw clinical study data from multiple sources into a standardized schema in an AWS data lake.',
-            'Generated data-mapping specifications with Claude Sonnet 4.6 and built Python and AWS workflows using S3, Lambda, DynamoDB, Step Functions, and Glue to support allergy-study analysis across ~10 studies per year, ~10,000 participants per study, and ~1,500 longitudinal survey observations per participant.',
-            'Prototyped vector-based semantic search over a clinical concept library of nearly 1 million entries, enabling interactive concept lookup in the product UI ahead of integrating it into the automated parsing pipeline.'
+            'Led a team of seven engineers building a clinical research data product for allergy studies, and owned its architecture and delivery plan.',
+            'Automated the classification of consent and sensitive information, which cut manual review by ~90% with ~80% parsing accuracy.',
+            'Designed the ingestion and preprocessing pipeline that turns raw study data from many sources into one standard schema in an AWS data lake.',
+            'Used Claude Sonnet 4.6 to draft data-mapping specifications, and built Python workflows on AWS (S3, Lambda, DynamoDB, Step Functions, Glue) that handle ~10 studies a year, ~10,000 participants per study, and ~1,500 survey observations per participant over time.',
+            'Prototyped vector-based semantic search over a library of nearly 1 million clinical concepts, so researchers could look up concepts in the UI before we wired it into the automated parsing pipeline.'
           ]
         },
         {
           name: 'Ethical Investment Platform',
           client: 'FinTech, Australia',
           summary: [
-            'Owned product and technical delivery from inception through beta launch for an ethical investing and shareholder advocacy product, leading a team of 2-3 engineers.',
-            'Designed a serverless trading platform using AWS Lambda, S3, API Gateway, SNS, SQS, DynamoDB, and MongoDB to power campaign pledges and progress tracking for investors.',
-            'Led third-party integrations across KYC, trading, and fund management providers, applying Domain-Driven Design to define bounded contexts and service boundaries that could scale beyond launch.'
+            'Took an ethical investing and shareholder advocacy product from idea to beta launch, leading a team of 2-3 engineers across both product and technical decisions.',
+            'Designed a serverless trading platform on AWS Lambda, S3, API Gateway, SNS, SQS, DynamoDB, and MongoDB that lets investors pledge to campaigns and follow their progress.',
+            'Led integrations with KYC, trading, and fund management providers, using Domain-Driven Design to draw clear service boundaries that would hold up as the product grew.'
           ]
         },
         {
           name: 'Education Platform Modernization',
           client: 'EdTech, Australia',
           summary: [
-            'Cut production promotion time from 2 working days to 2 minutes by replacing GitFlow with Trunk-Based Development across 50 microservices, introducing feature toggles and decentralized repository ownership so teams deploy independently instead of waiting for a shared twice-monthly release cycle.',
-            'Led a team of five engineers and established a stronger engineering practice through Domain-Driven Design, architectural principles, and structured technical coaching.',
-            'Drove adoption of Clean Architecture in selected legacy projects to improve maintainability and testability of the codebase.',
-            'Modernized public-facing APIs by introducing RESTful patterns and practices across legacy services.'
+            'Cut the time to get a change into production from 2 working days to 2 minutes by moving 50 microservices from GitFlow to Trunk-Based Development, with feature toggles and team-owned repositories, so teams could ship on their own instead of waiting for a shared release twice a month.',
+            'Led a team of five engineers and helped them build stronger habits around Domain-Driven Design, sound architecture, and regular technical coaching.',
+            'Introduced Clean Architecture into a few legacy projects to make them easier to test and maintain.',
+            'Cleaned up public-facing APIs in legacy services by moving them to consistent RESTful patterns.'
           ]
         }
       ]
@@ -113,12 +113,12 @@ const baseProfileData = {
       location: 'Bengaluru, India',
       duration: 'November 2018 - May 2022',
       summary: [
-        'Built and operated a payment gateway integrating 15 banks and vendors, supporting ~10,000 transactions per day for ~500 merchants across 4 countries.',
-        'Re-architected a Node.js monolith into modular Java payment services on AWS using Terraform, Postgres, Redis, and RethinkDB, applying Domain-Driven Design (DDD) to clarify service boundaries, ownership, and platform scalability.',
-        'Automated provider failover and configuration management to detect downstream outages and switch payment routes, reducing manual intervention during partner disruptions and improving resilience.',
-        'Led integrations with banks and retail partners to expand the merchant POS ecosystem through secure, partner-facing APIs across a multi-country payments footprint.',
-        'Shaped the architecture and technical roadmap for the payment platform, balancing reliability, throughput, extensibility, and operational resilience in a high-stakes transaction environment.',
-        'Scaled quality engineering practices with Ruby-based test automation, Test-Driven Development (TDD), Jenkins CI, performance testing, monitoring, and observability for critical payment APIs.'
+        'Built and ran a payment gateway connected to 15 banks and vendors, handling ~10,000 transactions a day for ~500 merchants in 4 countries.',
+        'Broke a Node.js monolith into modular Java payment services on AWS (Terraform, Postgres, Redis, RethinkDB), using Domain-Driven Design (DDD) to make service boundaries and ownership clear and to let the platform scale.',
+        'Automated provider failover so the gateway spotted downstream outages and rerouted payments on its own, instead of someone switching routes by hand during a partner incident.',
+        'Led integrations with banks and retail partners through secure partner APIs, growing the merchant POS network across several countries.',
+        'Shaped the payment platform\'s architecture and technical roadmap, weighing reliability, throughput, and ease of extension in a system where every failed transaction mattered.',
+        'Raised the quality bar for critical payment APIs with Ruby test automation, Test-Driven Development (TDD), Jenkins CI, performance testing, monitoring, and observability.'
       ]
     },
     {
@@ -128,11 +128,11 @@ const baseProfileData = {
       location: 'Bengaluru, India',
       duration: 'March 2017 - October 2018',
       summary: [
-        'Designed and delivered Java backend capabilities for Aconex document review workflows, applying Domain-Driven Design (DDD) to shape customer-facing service behavior.',
-        'Operated and deployed distributed microservices across AWS regions using Terraform, Postgres, and MSSQL, prioritizing availability, resilience, and predictable releases.',
-        'Built REST APIs for real-time PDF review collaboration and document annotation workflows.',
-        'Established automated UI testing infrastructure with Ruby-based test automation, Test-Driven Development (TDD), and Jenkins CI, improving regression coverage for core review features.',
-        'Continued working on the Aconex product within Oracle for several months following the acquisition, supporting a smooth product and engineering transition.'
+        'Built Java backend features for Aconex document review workflows, using Domain-Driven Design (DDD) to model how customers actually review documents.',
+        'Deployed and ran distributed microservices across AWS regions with Terraform, Postgres, and MSSQL, with a focus on availability and predictable releases.',
+        'Built REST APIs that let people review and annotate PDFs together in real time.',
+        'Set up automated UI testing with Ruby, Test-Driven Development (TDD), and Jenkins CI, giving the core review features much better regression coverage.',
+        'Stayed on the Aconex product for several months after Oracle\'s acquisition to help the product and engineering handover go smoothly.'
       ]
     },
     {
@@ -142,9 +142,9 @@ const baseProfileData = {
       location: 'Bengaluru, India',
       duration: 'November 2015 - February 2017',
       summary: [
-        'Delivered software for Bahmni, an open-source healthcare workflow platform, working across product, engineering, and implementation teams.',
-        'Built Ruby API test automation and Gatling performance tests, alongside Selenium and Capybara UI automation, strengthening release quality and system feedback loops.',
-        'Supported implementations for Médecins Sans Frontières (MSF), contributing to reliable workflows in mission-critical healthcare settings.'
+        'Worked on Bahmni, an open-source hospital management platform, alongside product, engineering, and implementation teams.',
+        'Wrote Ruby API tests, Gatling performance tests, and Selenium and Capybara UI tests, so the team got faster, more reliable feedback before each release.',
+        'Supported rollouts for Médecins Sans Frontières (MSF), where the system had to work reliably in demanding field hospitals.'
       ]
     },
     {
@@ -154,9 +154,9 @@ const baseProfileData = {
       location: 'Bengaluru, India',
       duration: 'November 2013 - October 2015',
       summary: [
-        'Contributed to a Hadoop-based big data credit risk platform using Hive, HBase, and Pig, improving confidence in data quality and pipeline reliability.',
-        'Analyzed source data and validated ETL mappings against business and technical requirements.',
-        'Developed Python tooling to generate reliable ETL test data and streamline data preparation workflows.'
+        'Worked on a Hadoop-based credit risk platform (Hive, HBase, Pig), testing data quality and pipeline reliability.',
+        'Analyzed source data and checked ETL mappings against business and technical requirements.',
+        'Wrote Python tools to generate ETL test data and speed up data preparation.'
       ]
     }
   ]
