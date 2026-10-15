@@ -14,11 +14,11 @@ python3 -m http.server 8000
 # then open http://localhost:8000/index.html
 ```
 
-**Regenerate the PDF resume** (`SwarupMahapatra_Resume_September.pdf`) after any content or print-style change — it is a build artifact produced by printing the page, not hand-edited, and is not tracked in git:
+**Regenerate the PDF resume** (`SwarupMahapatra_Resume.pdf`) after any content or print-style change — it is a build artifact produced by printing the page, not hand-edited, and is not tracked in git:
 ```
 "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless --disable-gpu \
   --no-pdf-header-footer \
-  --print-to-pdf="SwarupMahapatra_Resume_September.pdf" \
+  --print-to-pdf="SwarupMahapatra_Resume.pdf" \
   http://localhost:8000/index.html
 ```
 To export from the page, click **Download PDF** beside **Download DOCX**; this opens the browser's Print dialog. Select "Save as PDF" to save the resume, using the existing `print.css` layout. Disable the browser's own "Headers and footers" (the page supplies its own via `print.css`), and enable "Background graphics" (required for the accent colors and tech-pill backgrounds in `print.css`, which set `print-color-adjust: exact`).
