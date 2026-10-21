@@ -78,9 +78,9 @@ const baseProfileData = {
           client: 'HealthTech',
           summary: [
             'Led a team of seven engineers building a clinical research data product for allergy studies, and owned its architecture and delivery plan.',
-            'Automated the classification of consent and sensitive information, which cut manual review by ~90% with ~80% parsing accuracy.',
+            'Automated the classification of consent and sensitive information, which cut manual review by ~90%.',
             'Designed the ingestion and preprocessing pipeline that turns raw study data from many sources into one standard schema in an AWS data lake.',
-            'Used Claude Sonnet 4.6 to draft data-mapping specifications, and built Python workflows on AWS (S3, Lambda, DynamoDB, Step Functions, Glue) that handle ~10 studies a year, ~10,000 participants per study, and ~1,500 survey observations per participant over time.',
+            'Used Claude Sonnet 4.6 to draft data-mapping specifications (with ~80% accuracy against truth set), and built Python workflows on AWS (S3, Lambda, DynamoDB, Step Functions, Glue) that handle ~10 studies a year, ~10,000 participants per study, and ~1,500 survey observations per participant over time.',
             'Prototyped vector-based semantic search over a library of nearly 1 million clinical concepts, so researchers could look up concepts in the UI before we wired it into the automated parsing pipeline.'
           ]
         },
