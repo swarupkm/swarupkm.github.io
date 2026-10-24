@@ -30,8 +30,8 @@ const baseProfileData = {
       items: ['DDD', 'System Design', 'Distributed Systems', 'Clean Architecture', 'TDD', 'OOP', 'Functional Programming', 'Agile', 'Scrum']
     },
     {
-      category: 'AI Tools',
-      items: ['Prompt Engineering', 'RAG', 'Vector Databases', 'Vector Search', 'Claude Sonnet 4.6', 'Spec Driven Development']
+      category: 'AI Engineering',
+      items: ['Amazon Bedrock', 'Anthropic Claude', 'Claude Sonnet 4.6', 'Claude Code', 'AI Agents', 'Subagents', 'Harness Engineering', 'Spec Driven Development', 'Knowledge Graphs', 'Prompt Engineering', 'RAG', 'Vector Databases', 'Vector Search']
     },
     {
       category: 'Languages',
@@ -58,7 +58,7 @@ const baseProfileData = {
       items: ['Node.js', 'NestJS', 'Next.js', 'React', 'Sanity CMS', 'REST APIs']
     }
   ],
-  summary: 'Lead Software Engineer with 13+ years of building distributed, cloud-native systems in fintech, healthcare, and edtech. Cut the time to ship to production from 2 days to 2 minutes across 50 microservices, built a payment gateway that handles ~10,000 transactions a day in 4 countries, and reduced manual review of clinical data by ~90%. Leads teams of up to 7 engineers, from the first architecture sketch through to production.',
+  summary: 'Lead Software Engineer with 13+ years of experience building distributed, cloud-native systems in fintech, healthcare, and edtech. Takes products from early discovery to production: shapes the architecture with Domain-Driven Design, works with product and business leaders on what to build first, and leads small engineering teams through delivery. Recent work centres on AI: LLM-powered clinical data pipelines on Amazon Bedrock and AWS serverless, and AI agent workflows that speed up how the team itself builds software. Focused on systems that stay reliable and easy to change after launch, and on mentoring engineers to own the whole system, not just their tickets.',
   experiences: [
     {
       title: 'Lead Software Engineer',
@@ -69,8 +69,8 @@ const baseProfileData = {
       summary: [
         'Led the technical side of several products from first discovery to production launch, with teams of 2-7 engineers, building cloud-native systems in Python, TypeScript, Node.js, React, AWS, serverless, Docker, Postgres, and DynamoDB.',
         'Worked closely with product and business leaders to plan roadmaps, decide what to build first, and keep several teams moving in early-stage products where requirements were still taking shape.',
-        'Set up shared engineering practices around observability, distributed tracing, reliability, clean architecture, and Domain-Driven Design (DDD), so releases stayed stable and the code stayed easy to change after launch.',
-        'Mentored 6-10 engineers through design reviews, pairing, and architecture discussions, helping them think about the product and the whole system rather than just their own tickets.'
+        'Set up shared engineering practices around observability, distributed tracing, reliability, and clean architecture, so releases stayed stable and the code stayed easy to change after launch.',
+        'Mentored engineers through design reviews, pairing, and architecture discussions, helping them think about the product and the whole system rather than just their own tickets.'
       ],
       projects: [
         {
@@ -78,9 +78,12 @@ const baseProfileData = {
           client: 'HealthTech',
           summary: [
             'Led a team of seven engineers building a clinical research data product for allergy studies, and owned its architecture and delivery plan.',
-            'Automated the classification of consent and sensitive information, which cut manual review by ~90%.',
+            'Used AI to automate the classification of consent and sensitive information, running Anthropic Claude models on Amazon Bedrock, which cut manual review by ~90%.',
             'Designed the ingestion and preprocessing pipeline that turns raw study data from many sources into one standard schema in an AWS data lake.',
-            'Used Claude Sonnet 4.6 to draft data-mapping specifications (with ~80% accuracy against truth set), and built Python workflows on AWS (S3, Lambda, DynamoDB, Step Functions, Glue) that handle ~10 studies a year, ~10,000 participants per study, and ~1,500 survey observations per participant over time.',
+            'Used Claude Sonnet 4.6 to draft data-mapping specifications (with ~80% accuracy against truth set), and built Python workflows on AWS (S3, Lambda, DynamoDB, Step Functions, Glue) that process ~150 million survey observations a year (~10 studies, ~10,000 participants per study, ~1,500 observations per participant).',
+            'Introduced Harness Engineering to raise development productivity: designed a 7-agent AI delivery pipeline on Claude Code that takes every feature and bug fix through a spec, build, and verify cycle (domain modelling, requirements, architecture review, TDD, code review, documentation, and gated commits), with each agent given one job and only the tools it needs.',
+            'Built the team\'s engineering standards into the agents, including Event Storming, dependency inversion, and strict red-green-refactor TDD, with separation of duties (the agent that writes code never reviews or commits it) and human checkpoints on test plans and domain-modelling decisions, so AI-written code meets the same bar as human-written code.',
+            'Maintained an automated knowledge graph of the project\'s technical and domain components, and kept repo docs and wikis in sync with every change, checking each statement against the code.',
             'Prototyped vector-based semantic search over a library of nearly 1 million clinical concepts, so researchers could look up concepts in the UI before we wired it into the automated parsing pipeline.'
           ]
         },
@@ -90,7 +93,7 @@ const baseProfileData = {
           summary: [
             'Took an ethical investing and shareholder advocacy product from idea to beta launch, leading a team of 2-3 engineers across both product and technical decisions.',
             'Designed a serverless trading platform on AWS Lambda, S3, API Gateway, SNS, SQS, DynamoDB, and MongoDB that lets investors pledge to campaigns and follow their progress.',
-            'Led integrations with KYC, trading, and fund management providers, using Domain-Driven Design to draw clear service boundaries that would hold up as the product grew.'
+            'Led integrations with KYC, trading, and fund management providers, drawing service boundaries around each business capability so they would hold up as the product grew.'
           ]
         },
         {
@@ -98,7 +101,7 @@ const baseProfileData = {
           client: 'EdTech, Australia',
           summary: [
             'Cut the time to get a change into production from 2 working days to 2 minutes by moving 50 microservices from GitFlow to Trunk-Based Development, with feature toggles and team-owned repositories, so teams could ship on their own instead of waiting for a shared release twice a month.',
-            'Led a team of five engineers and helped them build stronger habits around Domain-Driven Design, sound architecture, and regular technical coaching.',
+            'Led a team of five engineers and helped them build stronger habits around domain modelling, sound architecture, and regular technical coaching.',
             'Introduced Clean Architecture into a few legacy projects to make them easier to test and maintain.',
             'Cleaned up public-facing APIs in legacy services by moving them to consistent RESTful patterns.'
           ]
@@ -114,7 +117,7 @@ const baseProfileData = {
       duration: 'November 2018 - May 2022',
       summary: [
         'Built and ran a payment gateway connected to 15 banks and vendors, handling ~10,000 transactions a day for ~500 merchants in 4 countries.',
-        'Broke a Node.js monolith into modular Java payment services on AWS (Terraform, Postgres, Redis, RethinkDB), using Domain-Driven Design (DDD) to make service boundaries and ownership clear and to let the platform scale.',
+        'Broke a Node.js monolith into modular Java payment services on AWS (Terraform, Postgres, Redis, RethinkDB), using bounded contexts to make service boundaries and ownership clear and to let the platform scale.',
         'Automated provider failover so the gateway spotted downstream outages and rerouted payments on its own, instead of someone switching routes by hand during a partner incident.',
         'Led integrations with banks and retail partners through secure partner APIs, growing the merchant POS network across several countries.',
         'Shaped the payment platform\'s architecture and technical roadmap, weighing reliability, throughput, and ease of extension in a system where every failed transaction mattered.',
@@ -128,7 +131,7 @@ const baseProfileData = {
       location: 'Bengaluru, India',
       duration: 'March 2017 - October 2018',
       summary: [
-        'Built Java backend features for Aconex document review workflows, using Domain-Driven Design (DDD) to model how customers actually review documents.',
+        'Built Java backend features for Aconex document review workflows, modelling the code closely on how customers actually review documents.',
         'Deployed and ran distributed microservices across AWS regions with Terraform, Postgres, and MSSQL, with a focus on availability and predictable releases.',
         'Built REST APIs that let people review and annotate PDFs together in real time.',
         'Set up automated UI testing with Ruby, Test-Driven Development (TDD), and Jenkins CI, giving the core review features much better regression coverage.',
