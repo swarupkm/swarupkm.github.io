@@ -18,6 +18,6 @@
   "homepage": "https://github.com/swarupkm/swarupkm.github.io#readme",
   "description": "",
   "dependencies": {
-    "playwright": "^1.48.2"
+    "playwright": "1.55.1"
   }
 }
