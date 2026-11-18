@@ -76,15 +76,13 @@ const baseProfileData = {
           client: 'HealthTech',
           summary: [
             'Led a team of seven engineers building a clinical research data product for allergy studies, owning its architecture and delivery.',
-            'Cut manual review of consent and sensitive data by ~90% by classifying it with Anthropic Claude models on Amazon Bedrock.',
             'Designed the ingestion and preprocessing pipeline that standardizes raw study data from many sources into one schema in an AWS data lake.',
-            'Cut each study\'s data-mapping specification from 5-10 business days of manual work to a couple of hours of review.',
-            'Drafted the specifications with Claude Sonnet 4.6, reaching ~80% accuracy against a truth set.',
-            'Built Python workflows on AWS (S3, Lambda, DynamoDB, Step Functions, Glue) processing ~150 million survey observations a year.',
+            'Drafted the data-mapping specifications with Claude Sonnet 4.6, reaching ~80% accuracy against the truth sets.',
+            'Cut each study\'s data-mapping specification design work from 5-10 business days of manual work to a couple of hours of review.',
+            'Cut manual review of consent and sensitive data by ~90% by classifying it with Anthropic Claude models on Amazon Bedrock.',
+            'Built Python workflows on AWS (S3, Lambda, DynamoDB, Step Functions, Glue) processing ~15 million survey observations a year.',
             'Introduced Harness Engineering: a 7-agent AI delivery pipeline on Claude Code that runs every feature and fix through spec, build, and verify.',
             'Built team standards into the agents, including Event Storming, dependency inversion, and strict red-green-refactor TDD.',
-            'Gave each agent one job, so the agent that writes code never reviews or commits it.',
-            'Added human checkpoints on test plans and domain decisions, holding AI-written code to the human bar.',
             'Automated a knowledge graph of technical and domain components, and docs and wikis that stay in sync with the code.',
             'Prototyped vector-based semantic search over ~1 million clinical concepts, letting researchers look up concepts in the UI.'
           ]
