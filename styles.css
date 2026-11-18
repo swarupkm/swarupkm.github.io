@@ -404,6 +404,74 @@ li::marker {
   }
 }
 
+/* Phone widths: nested padding (page, section, card, project) otherwise
+   leaves bullet text in a narrow strip. Scoped to screen so the print/PDF
+   layout in print.css is unaffected. */
+@media screen and (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+
+  .document-actions {
+    justify-content: stretch;
+  }
+
+  .docx-download,
+  .pdf-download {
+    flex: 1;
+    justify-content: center;
+    padding: 9px 8px;
+    font-size: 14px;
+    white-space: nowrap;
+  }
+
+  .container {
+    border-radius: 10px;
+  }
+
+  .profile-header {
+    padding: 20px 16px 16px;
+  }
+
+  .name {
+    font-size: 30px;
+  }
+
+  .profile-role {
+    font-size: 14px;
+  }
+
+  .summary {
+    padding: 14px 16px 12px;
+  }
+
+  .left,
+  .right {
+    padding: 18px 16px 20px;
+  }
+
+  .experience {
+    padding: 12px 12px 10px;
+    border-left-width: 3px;
+  }
+
+  .experience:hover {
+    box-shadow: 0 2px 6px rgba(77, 143, 214, 0.07);
+  }
+
+  .experience ul {
+    padding-left: 16px;
+  }
+
+  .project {
+    padding-left: 0;
+  }
+
+  .project ul {
+    padding-left: 16px;
+  }
+}
+
 /* ── ATS pre-header (hidden on screen, visible in print via print.css) ── */
 .ats-pre-header {
   display: none;
