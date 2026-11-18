@@ -67,43 +67,45 @@ const baseProfileData = {
       location: 'Bengaluru, India',
       duration: 'June 2022 - Present',
       summary: [
-        'Led the technical side of several products from first discovery to production launch, with teams of 2-7 engineers, building cloud-native systems in Python, TypeScript, Node.js, React, AWS, serverless, Docker, Postgres, and DynamoDB.',
-        'Worked closely with product and business leaders to plan roadmaps, decide what to build first, and keep several teams moving in early-stage products where requirements were still taking shape.',
-        'Set up shared engineering practices around observability, distributed tracing, reliability, and clean architecture, so releases stayed stable and the code stayed easy to change after launch.',
-        'Mentored engineers through design reviews, pairing, and architecture discussions, helping them think about the product and the whole system rather than just their own tickets.'
+        'Led several products from discovery to production launch, with teams of 2-7 engineers, on Python, TypeScript, React, and AWS serverless.',
+        'Mentored engineers through design reviews, pairing, and architecture discussions to own the whole system, not just their tickets.'
       ],
       projects: [
         {
           name: 'Clinical Research Data Platform',
           client: 'HealthTech',
           summary: [
-            'Led a team of seven engineers building a clinical research data product for allergy studies, and owned its architecture and delivery plan.',
-            'Used AI to automate the classification of consent and sensitive information, running Anthropic Claude models on Amazon Bedrock, which cut manual review by ~90%.',
-            'Designed the ingestion and preprocessing pipeline that turns raw study data from many sources into one standard schema in an AWS data lake.',
-            'Used Claude Sonnet 4.6 to draft data-mapping specifications (with ~80% accuracy against truth set), and built Python workflows on AWS (S3, Lambda, DynamoDB, Step Functions, Glue) that process ~150 million survey observations a year (~10 studies, ~10,000 participants per study, ~1,500 observations per participant).',
-            'Introduced Harness Engineering to raise development productivity: designed a 7-agent AI delivery pipeline on Claude Code that takes every feature and bug fix through a spec, build, and verify cycle (domain modelling, requirements, architecture review, TDD, code review, documentation, and gated commits), with each agent given one job and only the tools it needs.',
-            'Built the team\'s engineering standards into the agents, including Event Storming, dependency inversion, and strict red-green-refactor TDD, with separation of duties (the agent that writes code never reviews or commits it) and human checkpoints on test plans and domain-modelling decisions, so AI-written code meets the same bar as human-written code.',
-            'Maintained an automated knowledge graph of the project\'s technical and domain components, and kept repo docs and wikis in sync with every change, checking each statement against the code.',
-            'Prototyped vector-based semantic search over a library of nearly 1 million clinical concepts, so researchers could look up concepts in the UI before we wired it into the automated parsing pipeline.'
+            'Led a team of seven engineers building a clinical research data product for allergy studies, owning its architecture and delivery.',
+            'Cut manual review of consent and sensitive data by ~90% by classifying it with Anthropic Claude models on Amazon Bedrock.',
+            'Designed the ingestion and preprocessing pipeline that standardizes raw study data from many sources into one schema in an AWS data lake.',
+            'Cut each study\'s data-mapping specification from 5-10 business days of manual work to a couple of hours of review.',
+            'Drafted the specifications with Claude Sonnet 4.6, reaching ~80% accuracy against a truth set.',
+            'Built Python workflows on AWS (S3, Lambda, DynamoDB, Step Functions, Glue) processing ~150 million survey observations a year.',
+            'Introduced Harness Engineering: a 7-agent AI delivery pipeline on Claude Code that runs every feature and fix through spec, build, and verify.',
+            'Built team standards into the agents, including Event Storming, dependency inversion, and strict red-green-refactor TDD.',
+            'Gave each agent one job, so the agent that writes code never reviews or commits it.',
+            'Added human checkpoints on test plans and domain decisions, holding AI-written code to the human bar.',
+            'Automated a knowledge graph of technical and domain components, and docs and wikis that stay in sync with the code.',
+            'Prototyped vector-based semantic search over ~1 million clinical concepts, letting researchers look up concepts in the UI.'
           ]
         },
         {
           name: 'Ethical Investment Platform',
           client: 'FinTech, Australia',
           summary: [
-            'Took an ethical investing and shareholder advocacy product from idea to beta launch, leading a team of 2-3 engineers across both product and technical decisions.',
-            'Designed a serverless trading platform on AWS Lambda, S3, API Gateway, SNS, SQS, DynamoDB, and MongoDB that lets investors pledge to campaigns and follow their progress.',
-            'Led integrations with KYC, trading, and fund management providers, drawing service boundaries around each business capability so they would hold up as the product grew.'
+            'Took an ethical investing and shareholder advocacy product from idea to beta, leading 2-3 engineers on product and technical decisions.',
+            'Designed a serverless trading platform on AWS (Lambda, SQS, DynamoDB) where investors pledge to campaigns and track their progress.',
+            'Led KYC, trading, and fund management integrations, drawing service boundaries around each business capability.'
           ]
         },
         {
           name: 'Education Platform Modernization',
           client: 'EdTech, Australia',
           summary: [
-            'Cut the time to get a change into production from 2 working days to 2 minutes by moving 50 microservices from GitFlow to Trunk-Based Development, with feature toggles and team-owned repositories, so teams could ship on their own instead of waiting for a shared release twice a month.',
-            'Led a team of five engineers and helped them build stronger habits around domain modelling, sound architecture, and regular technical coaching.',
-            'Introduced Clean Architecture into a few legacy projects to make them easier to test and maintain.',
-            'Cleaned up public-facing APIs in legacy services by moving them to consistent RESTful patterns.'
+            'Cut lead time to production from 2 working days to 2 minutes by moving 50 microservices from GitFlow to Trunk-Based Development.',
+            'Added feature toggles and team-owned repositories, so teams shipped independently instead of waiting for a twice-monthly release.',
+            'Led a team of five engineers, coaching them in domain modelling and sound architecture.',
+            'Moved public-facing APIs in legacy services to consistent RESTful patterns.'
           ]
         }
       ]
@@ -117,11 +119,10 @@ const baseProfileData = {
       duration: 'November 2018 - May 2022',
       summary: [
         'Built and ran a payment gateway connected to 15 banks and vendors, handling ~10,000 transactions a day for ~500 merchants in 4 countries.',
-        'Broke a Node.js monolith into modular Java payment services on AWS (Terraform, Postgres, Redis, RethinkDB), using bounded contexts to make service boundaries and ownership clear and to let the platform scale.',
-        'Automated provider failover so the gateway spotted downstream outages and rerouted payments on its own, instead of someone switching routes by hand during a partner incident.',
-        'Led integrations with banks and retail partners through secure partner APIs, growing the merchant POS network across several countries.',
-        'Shaped the payment platform\'s architecture and technical roadmap, weighing reliability, throughput, and ease of extension in a system where every failed transaction mattered.',
-        'Raised the quality bar for critical payment APIs with Ruby test automation, Test-Driven Development (TDD), Jenkins CI, performance testing, monitoring, and observability.'
+        'Split a Node.js monolith into Java payment services on AWS along bounded contexts, giving each service clear ownership.',
+        'Automated provider failover to detect downstream outages and reroute payments without manual switching during partner incidents.',
+        'Led secure partner API integrations with banks and retailers, growing the merchant POS network across several countries.',
+        'Raised quality of critical payment APIs with Ruby test automation, Test-Driven Development (TDD), Jenkins CI, performance testing, and monitoring.'
       ]
     },
     {
@@ -131,11 +132,10 @@ const baseProfileData = {
       location: 'Bengaluru, India',
       duration: 'March 2017 - October 2018',
       summary: [
-        'Built Java backend features for Aconex document review workflows, modelling the code closely on how customers actually review documents.',
-        'Deployed and ran distributed microservices across AWS regions with Terraform, Postgres, and MSSQL, with a focus on availability and predictable releases.',
+        'Built Java backend features for Aconex document review workflows, modelled on how customers actually review documents.',
+        'Deployed distributed microservices across AWS regions with Terraform, Postgres, and MSSQL, focusing on availability and predictable releases.',
         'Built REST APIs that let people review and annotate PDFs together in real time.',
-        'Set up automated UI testing with Ruby, Test-Driven Development (TDD), and Jenkins CI, giving the core review features much better regression coverage.',
-        'Stayed on the Aconex product for several months after Oracle\'s acquisition to help the product and engineering handover go smoothly.'
+        'Set up automated UI testing with Ruby, TDD, and Jenkins CI, improving regression coverage of core review features.'
       ]
     },
     {
@@ -145,9 +145,9 @@ const baseProfileData = {
       location: 'Bengaluru, India',
       duration: 'November 2015 - February 2017',
       summary: [
-        'Worked on Bahmni, an open-source hospital management platform, alongside product, engineering, and implementation teams.',
-        'Wrote Ruby API tests, Gatling performance tests, and Selenium and Capybara UI tests, so the team got faster, more reliable feedback before each release.',
-        'Supported rollouts for Médecins Sans Frontières (MSF), where the system had to work reliably in demanding field hospitals.'
+        'Delivered features for Bahmni, an open-source hospital management platform, with product and implementation teams.',
+        'Wrote Ruby API tests, Gatling performance tests, and Selenium and Capybara UI tests for faster, more reliable release feedback.',
+        'Supported rollouts for Médecins Sans Frontières (MSF) in demanding field hospitals.'
       ]
     },
     {

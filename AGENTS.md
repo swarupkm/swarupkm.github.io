@@ -21,6 +21,20 @@ python3 -m http.server 8000
   --print-to-pdf="SwarupMahapatra_Resume.pdf" \
   http://localhost:8000/index.html
 ```
+**Check bullet length** after any change to experience or project bullets — prints every bullet over 25 words or 150 characters, longest first (no output means all pass):
+```
+node -e "
+const src = require('fs').readFileSync('index.js', 'utf8');
+const data = eval('(' + src.match(/const baseProfileData = ([\s\S]*?\n})/)[1] + ')');
+data.experiences
+  .flatMap((e) => [...e.summary, ...(e.projects || []).flatMap((p) => p.summary)])
+  .map((b) => ({ b, words: b.split(/\s+/).length }))
+  .filter(({ b, words }) => words > 25 || b.length > 150)
+  .sort((x, y) => y.b.length - x.b.length)
+  .forEach(({ b, words }) => console.log(b.length + 'c ' + words + 'w  ' + b));
+"
+```
+
 To export from the page, click **Download PDF** beside **Download DOCX**; this opens the browser's Print dialog. Select "Save as PDF" to save the resume, using the existing `print.css` layout. Disable the browser's own "Headers and footers" (the page supplies its own via `print.css`), and enable "Background graphics" (required for the accent colors and tech-pill backgrounds in `print.css`, which set `print-color-adjust: exact`).
 
 ## Architecture
@@ -40,6 +54,7 @@ To export from the page, click **Download PDF** beside **Download DOCX**; this o
 
 The prompt ends with a review checklist that applies to any content change in `baseProfileData`, not only tailored variants:
 - **6-second test:** the top third of the page (name, title, summary) shows the current role, years of experience, and strongest wins at a glance.
+- **Bullet length:** one idea per bullet, action verb first, at most 25 words and 150 characters (one or two printed lines); split two-idea bullets rather than dropping detail. Verify with the bullet-length command above.
 - **Impact over responsibilities:** bullets state outcomes ("action + what changed + measurable result"), using only metrics already in the resume or confirmed by the user, and never invented ones.
 - **Tailoring:** the most relevant experience and skills for the target role come first, and bullets that don't help are trimmed.
 - **Consistency:** titles, dates, years of experience, and technology names agree across sections and across the web, DOCX, and PDF outputs.
